@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: ../apps/api
+      dockerfile: Dockerfile
+    environment:
+      ENVIRONMENT: production
+      DEBUG: "false"
+      JWT_SECRET: ${JWT_SECRET}
+      DATABASE_URL: sqlite:////data/investipet.db
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+      TRUSTED_HOSTS: ${TRUSTED_HOSTS:-localhost,127.0.0.1}
+      ENABLE_DOCS: ${ENABLE_DOCS:-false}
+      FORCE_HTTPS: ${FORCE_HTTPS:-false}
+    volumes:
+      - api-data:/data
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  api-data:

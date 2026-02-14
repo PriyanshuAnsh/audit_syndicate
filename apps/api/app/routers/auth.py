@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, UTC
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
@@ -12,8 +12,7 @@ from ..auth import (
 )
 from ..config import settings
 from ..database import get_db
-from ..deps import current_user
-from ..models import Pet, RefreshToken, User, Wallet, RewardEvent
+from ..models import Pet, RefreshToken, User, Wallet
 from ..schemas import LoginRequest, RefreshRequest, RegisterRequest, TokenResponse
 from ..services import grant_reward
 
@@ -23,6 +22,9 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 @router.post("/register", response_model=TokenResponse)
 def register(payload: RegisterRequest, db: Session = Depends(get_db)):
+    if settings.environment != "development" and settings.jwt_secret == "dev-secret-change-me":
+        raise HTTPException(status_code=500, detail="server misconfigured")
+
     if db.query(User).filter(User.email == payload.email.lower()).first():
         raise HTTPException(status_code=400, detail="email already exists")
 
@@ -53,6 +55,7 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
 
     access = create_access_token(user.id)
     refresh, exp = create_refresh_token(user.id)
+    db.query(RefreshToken).filter(RefreshToken.user_id == user.id).delete()
     db.add(RefreshToken(user_id=user.id, token=refresh, expires_at=exp))
 
     grant_reward(db, user.id, "daily_login", settings.reward_daily_login_xp, settings.reward_daily_login_coins, "daily", str(date.today()))
@@ -65,6 +68,10 @@ def refresh(payload: RefreshRequest, db: Session = Depends(get_db)):
     record = db.query(RefreshToken).filter(RefreshToken.token == payload.refresh_token).first()
     if not record:
         raise HTTPException(status_code=401, detail="invalid refresh token")
+    if record.expires_at < datetime.now(UTC).replace(tzinfo=None):
+        db.delete(record)
+        db.commit()
+        raise HTTPException(status_code=401, detail="refresh token expired")
 
     try:
         user_id = decode_token(payload.refresh_token)

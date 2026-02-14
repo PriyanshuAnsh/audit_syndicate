@@ -3,7 +3,9 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-DB_PATH = "investipet.db"
+os.environ["DATABASE_URL"] = "sqlite:///./test_investipet.db"
+
+DB_PATH = "test_investipet.db"
 if os.path.exists(DB_PATH):
     os.remove(DB_PATH)
 

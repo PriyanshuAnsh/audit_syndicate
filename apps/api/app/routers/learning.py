@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, UTC
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -89,7 +89,7 @@ def submit_lesson(
 
     progress.status = "completed"
     progress.score = score
-    progress.completed_at = datetime.utcnow()
+    progress.completed_at = datetime.now(UTC).replace(tzinfo=None)
 
     grant_reward(
         db,
