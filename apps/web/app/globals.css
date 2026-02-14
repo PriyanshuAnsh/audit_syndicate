@@ -3,11 +3,309 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f6f2e9;
-  --ink: #152238;
+  --bg: #f7f3e8;
+  --bg-soft: #efe6d2;
+  --ink: #1d2638;
+  --ink-soft: #4b556a;
+  --brand: #0e9f8c;
+  --brand-strong: #07796c;
+  --accent: #ff8f5f;
+  --card: rgba(255, 255, 255, 0.8);
+  --ring: rgba(14, 159, 140, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
-  background: radial-gradient(circle at 15% 20%, #ffffff 0%, #f6f2e9 42%, #e7f0dc 100%);
+  margin: 0;
   color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI Variable", "Trebuchet MS", "Gill Sans", sans-serif;
+  background:
+    radial-gradient(circle at 5% 10%, #fff8e8 0, transparent 35%),
+    radial-gradient(circle at 85% 10%, #d5f7f1 0, transparent 30%),
+    radial-gradient(circle at 80% 90%, #ffe3d2 0, transparent 25%),
+    linear-gradient(145deg, #f7f3e8 0%, #ebe4d1 60%, #e4f0ea 100%);
+}
+
+.app-shell {
+  @apply mx-auto min-h-screen max-w-6xl p-4 md:p-8;
+}
+
+.page-title {
+  @apply text-3xl font-semibold tracking-tight md:text-4xl;
+}
+
+.page-subtitle {
+  color: var(--ink-soft);
+  @apply text-sm md:text-base;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 14px 40px rgba(29, 38, 56, 0.08);
+  @apply rounded-2xl;
+}
+
+.kpi {
+  @apply glass p-4;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%);
+  color: white;
+  @apply rounded-xl px-4 py-2 font-medium transition hover:translate-y-[-1px] hover:opacity-95;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(29, 38, 56, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  @apply rounded-xl px-4 py-2 font-medium transition hover:bg-white;
+}
+
+.input {
+  border: 1px solid rgba(29, 38, 56, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  @apply w-full rounded-xl px-3 py-2 outline-none transition;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.warning-banner {
+  background: linear-gradient(90deg, rgba(255, 143, 95, 0.24), rgba(255, 214, 163, 0.45));
+  border: 1px solid rgba(255, 143, 95, 0.35);
+  @apply rounded-xl p-3 text-sm font-medium;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(29, 38, 56, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.stat-chip {
+  @apply rounded-full px-3 py-1 text-xs font-semibold;
+  background: rgba(14, 159, 140, 0.15);
+  color: var(--brand-strong);
+}
+
+@keyframes petFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes petShadow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(0.86); opacity: 0.14; }
+}
+
+@keyframes petBlink {
+  0%, 44%, 48%, 100% { transform: scaleY(1); }
+  46% { transform: scaleY(0.1); }
+}
+
+@keyframes petTail {
+  0%, 100% { transform: rotate(25deg); }
+  50% { transform: rotate(46deg); }
+}
+
+@keyframes petAura {
+  0%, 100% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.pet-scene {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+.pet-scene-compact {
+  padding: 0.75rem 0.5rem;
+}
+
+.pet-aura {
+  position: absolute;
+  top: 22%;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(78, 225, 193, 0.38) 0%, rgba(78, 225, 193, 0) 72%);
+  animation: petAura 3.2s ease-in-out infinite;
+}
+
+.pet-wrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  animation: petFloat 3.1s ease-in-out infinite;
+}
+
+.pet-scene-compact .pet-wrap {
+  width: 180px;
+  height: 180px;
+}
+
+.pet-body {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 140px;
+  height: 124px;
+  border-radius: 44% 44% 38% 38%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(165deg, #8af0df 0%, #43ceb6 100%);
+  border: 3px solid #1d2638;
+}
+
+.pet-ear {
+  position: absolute;
+  top: 28px;
+  width: 42px;
+  height: 52px;
+  background: linear-gradient(165deg, #92f3e3 0%, #5fdbc7 100%);
+  border: 3px solid #1d2638;
+  border-radius: 60% 60% 10% 10%;
+}
+
+.pet-ear-left {
+  left: 48px;
+  transform: rotate(-18deg);
+}
+
+.pet-ear-right {
+  right: 48px;
+  transform: rotate(18deg);
+}
+
+.pet-eye {
+  position: absolute;
+  top: 40px;
+  width: 22px;
+  height: 28px;
+  border-radius: 999px;
+  background: #1d2638;
+  transform-origin: center;
+  animation: petBlink 4.5s infinite;
+}
+
+.pet-eye span {
+  position: absolute;
+  right: 3px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.pet-eye-left { left: 34px; }
+.pet-eye-right { right: 34px; }
+
+.pet-mouth {
+  position: absolute;
+  left: 50%;
+  top: 78px;
+  width: 24px;
+  height: 14px;
+  transform: translateX(-50%);
+  border-bottom: 3px solid #1d2638;
+  border-radius: 0 0 999px 999px;
+}
+
+.pet-cheek {
+  position: absolute;
+  top: 70px;
+  width: 18px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 143, 95, 0.58);
+}
+
+.pet-cheek-left { left: 16px; }
+.pet-cheek-right { right: 16px; }
+
+.pet-belly {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 46px;
+  border-radius: 45% 45% 38% 38%;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pet-tail {
+  position: absolute;
+  right: 24px;
+  bottom: 72px;
+  width: 38px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(165deg, #87eedc 0%, #51d6bf 100%);
+  border: 3px solid #1d2638;
+  transform-origin: left center;
+  animation: petTail 1.25s ease-in-out infinite;
+}
+
+.pet-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: 118px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(29, 38, 56, 0.2);
+  animation: petShadow 3.1s ease-in-out infinite;
+}
+
+.pet-stage-egg .pet-body {
+  border-radius: 48% 48% 42% 42%;
+  background: linear-gradient(165deg, #fff3d8 0%, #f6dda3 100%);
+}
+
+.pet-stage-egg .pet-ear,
+.pet-stage-egg .pet-tail {
+  display: none;
+}
+
+.pet-stage-teen .pet-body,
+.pet-stage-adult .pet-body {
+  width: 150px;
+  height: 132px;
+}
+
+.pet-stage-adult .pet-body {
+  background: linear-gradient(165deg, #73e7d3 0%, #25b89d 100%);
+}
+
+.pet-card {
+  width: min(100%, 260px);
+  padding: 0.7rem 0.9rem;
+  text-align: center;
+}
+
+.pet-name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.pet-meta {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #4b556a;
 }

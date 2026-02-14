@@ -27,13 +27,16 @@ export default function RegisterPage() {
   }
 
   return (
-    <form className="mx-auto max-w-md space-y-3" onSubmit={submit}>
-      <h1 className="text-2xl font-semibold">Create account</h1>
-      <input className="w-full rounded border p-2" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input className="w-full rounded border p-2" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
-      <input className="w-full rounded border p-2" value={petName} onChange={(e) => setPetName(e.target.value)} placeholder="Pet name" />
-      {error && <p className="text-sm text-red-700">{error}</p>}
-      <button className="rounded bg-ink px-4 py-2 text-white" type="submit">Register</button>
-    </form>
+    <div className="mx-auto max-w-md">
+      <form className="glass space-y-4 p-6" onSubmit={submit}>
+        <h1 className="page-title text-2xl">Create Your InvestiPet</h1>
+        <p className="page-subtitle">You&apos;ll get starter cash and coins to begin safely.</p>
+        <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+        <input className="input" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
+        <input className="input" value={petName} onChange={(e) => setPetName(e.target.value)} placeholder="Pet name" />
+        {error && <p className="text-sm text-red-700">{error}</p>}
+        <button className="btn-primary w-full" type="submit">Register</button>
+      </form>
+    </div>
   );
 }

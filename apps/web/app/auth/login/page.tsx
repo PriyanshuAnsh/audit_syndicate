@@ -26,12 +26,15 @@ export default function LoginPage() {
   }
 
   return (
-    <form className="mx-auto max-w-md space-y-3" onSubmit={submit}>
-      <h1 className="text-2xl font-semibold">Login</h1>
-      <input className="w-full rounded border p-2" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input className="w-full rounded border p-2" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
-      {error && <p className="text-sm text-red-700">{error}</p>}
-      <button className="rounded bg-ink px-4 py-2 text-white" type="submit">Login</button>
-    </form>
+    <div className="mx-auto max-w-md">
+      <form className="glass space-y-4 p-6" onSubmit={submit}>
+        <h1 className="page-title text-2xl">Welcome Back</h1>
+        <p className="page-subtitle">Continue your learning streak-free journey.</p>
+        <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+        <input className="input" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
+        {error && <p className="text-sm text-red-700">{error}</p>}
+        <button className="btn-primary w-full" type="submit">Login</button>
+      </form>
+    </div>
   );
 }

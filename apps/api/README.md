@@ -1,6 +1,6 @@
 # InvestiPet API
 
-## Run
+## Run (Dev)
 
 ```bash
 cd apps/api
@@ -14,5 +14,21 @@ uvicorn app.main:app --reload
 
 ```bash
 cd apps/api
-pytest -q
+.venv/bin/pytest -q
 ```
+
+## Environment Variables
+
+- `ENVIRONMENT`: `development` or `production`
+- `DEBUG`: `true` or `false`
+- `JWT_SECRET`: required for production
+- `DATABASE_URL`: default `sqlite:///./investipet.db`
+- `CORS_ORIGINS`: comma-separated origins
+- `TRUSTED_HOSTS`: comma-separated hostnames
+- `ENABLE_DOCS`: expose `/docs` and `/openapi.json`
+- `FORCE_HTTPS`: enable HTTPS redirect middleware
+
+## Health Endpoints
+
+- `GET /health`: liveness and environment info
+- `GET /ready`: database connectivity check

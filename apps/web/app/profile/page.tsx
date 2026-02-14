@@ -10,15 +10,19 @@ export default function ProfilePage() {
   return (
     <div className="space-y-4">
       <Nav />
-      <h1 className="text-2xl font-semibold">Profile</h1>
+      <div className="glass p-5">
+        <h1 className="page-title">Profile</h1>
+        <p className="page-subtitle">Manage account and review your current progression.</p>
+      </div>
       {me.data && (
-        <div className="rounded bg-white p-3">
-          <p>Email: {me.data.email}</p>
-          <p>Pet: {me.data.pet.name} ({me.data.pet.species})</p>
-          <p>XP: {me.data.xp_total}</p>
+        <div className="glass p-4">
+          <p><span className="font-semibold">Email:</span> {me.data.email}</p>
+          <p><span className="font-semibold">Pet:</span> {me.data.pet.name} ({me.data.pet.species})</p>
+          <p><span className="font-semibold">Level:</span> {me.data.pet.level} • {me.data.pet.stage}</p>
+          <p><span className="font-semibold">XP:</span> {me.data.xp_total}</p>
         </div>
       )}
-      <button className="rounded border border-ink px-3 py-2" onClick={() => { clearTokens(); window.location.href = "/"; }}>
+      <button className="btn-secondary" onClick={() => { clearTokens(); window.location.href = "/"; }}>
         Logout
       </button>
     </div>

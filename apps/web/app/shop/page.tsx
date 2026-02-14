@@ -27,17 +27,23 @@ export default function ShopPage() {
   return (
     <div className="space-y-4">
       <Nav />
-      <h1 className="text-2xl font-semibold">Pet Shop</h1>
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="glass p-5">
+        <h1 className="page-title">Pet Shop</h1>
+        <p className="page-subtitle">Spend coins on cosmetics, toys, and habitats.</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {(items.data || []).map((item: any) => (
-          <div key={item.id} className="rounded bg-white p-3 shadow">
-            <p className="font-medium">{item.name}</p>
-            <p className="text-sm">{item.type} / {item.slot}</p>
-            <p className="text-sm">{item.coin_cost} coins</p>
+          <div key={item.id} className="glass p-4">
+            <div className="mb-2 flex items-center justify-between">
+              <p className="font-semibold">{item.name}</p>
+              <span className="stat-chip">{item.type}</span>
+            </div>
+            <p className="text-sm text-slate-600">Slot: {item.slot}</p>
+            <p className="mb-3 text-sm text-slate-600">Cost: {item.coin_cost} coins</p>
             {!owned.has(item.id) ? (
-              <button className="mt-2 rounded bg-ink px-3 py-1 text-white" onClick={() => purchase.mutate(item.id)}>Buy</button>
+              <button className="btn-primary" onClick={() => purchase.mutate(item.id)}>Buy</button>
             ) : (
-              <button className="mt-2 rounded border border-ink px-3 py-1" onClick={() => equip.mutate(item.id)}>Equip</button>
+              <button className="btn-secondary" onClick={() => equip.mutate(item.id)}>Equip</button>
             )}
           </div>
         ))}

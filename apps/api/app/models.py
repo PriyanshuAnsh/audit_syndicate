@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, UTC
 
 from sqlalchemy import (
     Boolean,
@@ -15,13 +15,17 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .database import Base
 
 
+def utcnow() -> datetime:
+    return datetime.now(UTC).replace(tzinfo=None)
+
+
 class User(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     email: Mapped[str] = mapped_column(String, unique=True, index=True)
     password_hash: Mapped[str] = mapped_column(String)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class Wallet(Base):
@@ -77,7 +81,7 @@ class Trade(Base):
     side: Mapped[str] = mapped_column(String)
     qty: Mapped[float] = mapped_column(Float)
     price: Mapped[float] = mapped_column(Float)
-    executed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    executed_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class Lesson(Base):
@@ -121,7 +125,7 @@ class Inventory(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     item_id: Mapped[int] = mapped_column(ForeignKey("shop_items.id"))
-    acquired_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    acquired_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
     equipped: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
@@ -135,7 +139,7 @@ class RewardEvent(Base):
     coin_delta: Mapped[int] = mapped_column(Integer)
     ref_type: Mapped[str] = mapped_column(String)
     ref_id: Mapped[str] = mapped_column(String)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class RefreshToken(Base):
@@ -145,4 +149,4 @@ class RefreshToken(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     token: Mapped[str] = mapped_column(String, unique=True, index=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
