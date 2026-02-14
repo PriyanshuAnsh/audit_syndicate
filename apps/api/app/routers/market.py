@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from ..database import get_db
@@ -30,6 +30,9 @@ def quotes(db: Session = Depends(get_db)):
     rows = db.query(Asset).filter(Asset.is_active.is_(True)).all()
     payload = []
     for asset in rows:
-        price, as_of = quote_for_asset(asset)
+        try:
+            price, as_of = quote_for_asset(asset)
+        except RuntimeError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
         payload.append({"symbol": asset.symbol, "price": price, "as_of": as_of})
     return payload

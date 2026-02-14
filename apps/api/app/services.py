@@ -1,5 +1,9 @@
 from datetime import datetime, timezone
 import hashlib
+import logging
+from time import time
+
+import httpx
 from sqlalchemy.orm import Session
 
 from .config import settings
@@ -12,6 +16,16 @@ STAGE_BY_LEVEL = {
     3: "baby",
     5: "teen",
     7: "adult",
+}
+
+logger = logging.getLogger(__name__)
+_quote_cache: dict[str, tuple[float, float]] = {}
+FINNHUB_CRYPTO_SYMBOL_MAP = {
+    "BTC": "BINANCE:BTCUSDT",
+    "ETH": "BINANCE:ETHUSDT",
+    "SOL": "BINANCE:SOLUSDT",
+    "ADA": "BINANCE:ADAUSDT",
+    "DOGE": "BINANCE:DOGEUSDT",
 }
 
 
@@ -34,6 +48,18 @@ def compute_level(total_xp: int) -> tuple[int, int]:
 
 
 def quote_for_asset(asset: Asset) -> tuple[float, datetime]:
+    if settings.price_mode in {"finnhub", "hybrid"}:
+        finnhub_symbol = _finnhub_symbol_for_asset(asset)
+        live = _quote_from_finnhub(finnhub_symbol)
+        if live is not None:
+            return round(live, 2), datetime.now(timezone.utc).replace(tzinfo=None)
+        if settings.price_mode == "finnhub":
+            raise RuntimeError(f"live quote unavailable for {asset.symbol}")
+
+    return _simulated_quote(asset)
+
+
+def _simulated_quote(asset: Asset) -> tuple[float, datetime]:
     now = datetime.now(timezone.utc)
     minute_bucket = now.strftime("%Y%m%d%H%M")
     digest = hashlib.sha256(f"{asset.symbol}:{minute_bucket}".encode()).hexdigest()
@@ -41,6 +67,39 @@ def quote_for_asset(asset: Asset) -> tuple[float, datetime]:
     change = ((drift_seed % 1201) - 600) / 10000.0
     price = max(0.5, round(asset.base_price * (1 + change), 2))
     return price, now.replace(tzinfo=None)
+
+
+def _quote_from_finnhub(symbol: str) -> float | None:
+    if not settings.finnhub_api_key:
+        return None
+
+    now_ts = time()
+    cached = _quote_cache.get(symbol)
+    if cached and (now_ts - cached[1]) < settings.price_cache_ttl_seconds:
+        return cached[0]
+
+    try:
+        response = httpx.get(
+            f"{settings.finnhub_base_url}/quote",
+            params={"symbol": symbol, "token": settings.finnhub_api_key},
+            timeout=4.0,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        current_price = payload.get("c")
+        if isinstance(current_price, (int, float)) and current_price > 0:
+            price = float(current_price)
+            _quote_cache[symbol] = (price, now_ts)
+            return price
+    except Exception as exc:
+        logger.warning("finnhub request failed for %s: %s", symbol, exc)
+    return None
+
+
+def _finnhub_symbol_for_asset(asset: Asset) -> str:
+    if asset.type == "crypto":
+        return FINNHUB_CRYPTO_SYMBOL_MAP.get(asset.symbol, asset.symbol)
+    return asset.symbol
 
 
 def grant_reward(db: Session, user_id: int, source: str, xp: int, coins: int, ref_type: str, ref_id: str):
@@ -139,6 +198,7 @@ def pet_equipped_items(db: Session, user_id: int) -> list[dict]:
             "name": item.name,
             "slot": item.slot,
             "type": item.type,
+            "metadata_json": item.metadata_json or {},
         }
         for _, item in rows
     ]

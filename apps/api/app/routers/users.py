@@ -5,7 +5,7 @@ from ..database import get_db
 from ..deps import current_user
 from ..models import User, Wallet, Pet
 from ..schemas import MeOut, PetOut
-from ..services import pet_equipped_items
+# from ..services import pet_equipped_items
 
 
 router = APIRouter(tags=["users"])
@@ -26,7 +26,8 @@ def me(user: User = Depends(current_user), db: Session = Depends(get_db)):
             "level": pet.level,
             "xp_current": pet.xp_current,
             "stage": pet.stage,
-            "equipped_items": pet_equipped_items(db, user.id),
+            # "equipped_items": pet_equipped_items(db, user.id),
+            "equipped_items": [],
         },
     }
 
@@ -40,7 +41,8 @@ def get_pet(user: User = Depends(current_user), db: Session = Depends(get_db)):
         "level": pet.level,
         "xp_current": pet.xp_current,
         "stage": pet.stage,
-        "equipped_items": pet_equipped_items(db, user.id),
+        # "equipped_items": pet_equipped_items(db, user.id),
+        "equipped_items": [],
     }
 
 

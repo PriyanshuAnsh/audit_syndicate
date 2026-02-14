@@ -27,6 +27,9 @@ cd apps/api
 - `TRUSTED_HOSTS`: comma-separated hostnames
 - `ENABLE_DOCS`: expose `/docs` and `/openapi.json`
 - `FORCE_HTTPS`: enable HTTPS redirect middleware
+- `PRICE_MODE`: `simulated`, `finnhub`, or `hybrid`
+- `PRICE_CACHE_TTL_SECONDS`: quote cache time in seconds
+- `FINNHUB_API_KEY`: Finnhub API key for live stock quotes
 
 ## Health Endpoints
 

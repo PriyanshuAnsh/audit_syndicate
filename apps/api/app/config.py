@@ -16,6 +16,10 @@ class Settings(BaseModel):
     trusted_hosts: list[str] = [host.strip() for host in os.getenv("TRUSTED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if host.strip()]
     enable_docs: bool = os.getenv("ENABLE_DOCS", "true").lower() == "true"
     force_https: bool = os.getenv("FORCE_HTTPS", "false").lower() == "true"
+    price_mode: str = os.getenv("PRICE_MODE", "simulated")  # simulated | finnhub | hybrid
+    price_cache_ttl_seconds: int = int(os.getenv("PRICE_CACHE_TTL_SECONDS", "30"))
+    finnhub_api_key: str = os.getenv("FINNHUB_API_KEY", "")
+    finnhub_base_url: str = os.getenv("FINNHUB_BASE_URL", "https://finnhub.io/api/v1")
 
     starter_cash: float = 10000.0
     starter_coins: int = 500

@@ -52,6 +52,7 @@ docker compose -f docker-compose.prod.yml --env-file .api.env --env-file .web.en
 - Docs can be disabled in production (`ENABLE_DOCS=false`)
 - Refresh token expiry enforcement and rotation
 - Request IDs returned in `x-request-id` response header
+- Configurable live quote mode via Finnhub (`PRICE_MODE`, `FINNHUB_API_KEY`)
 
 ## Implemented API Endpoints
 - Auth: register/login/refresh

@@ -66,17 +66,17 @@ LESSONS = [
 ]
 
 SHOP_ITEMS = [
-    (1, "accessory", "hat", "Leaf Cap", 60),
-    (2, "accessory", "hat", "Space Helmet", 100),
-    (3, "accessory", "glasses", "Scholar Glasses", 90),
-    (4, "skin", "skin", "Golden Fur", 180),
-    (5, "skin", "skin", "Nebula Coat", 220),
-    (6, "toy", "toy", "Coin Ball", 45),
-    (7, "toy", "toy", "Puzzle Cube", 55),
-    (8, "outfit", "body", "Trader Jacket", 130),
-    (9, "habitat", "background", "Forest Home", 200),
-    (10, "habitat", "background", "City Loft", 250),
-    (11, "habitat", "background", "Moon Base", 320),
+    (1, "accessory", "hat", "Leaf Cap", 60, {"image_url": "/shop/leaf-cap.svg", "pet_layer": "hat", "pet_asset": "/shop/leaf-cap.svg"}),
+    (2, "accessory", "hat", "Space Helmet", 100, {"image_url": "/shop/space-helmet.svg", "pet_layer": "hat", "pet_asset": "/shop/space-helmet.svg"}),
+    (3, "accessory", "glasses", "Scholar Glasses", 90, {"image_url": "/shop/scholar-glasses.svg", "pet_layer": "glasses", "pet_asset": "/shop/scholar-glasses.svg"}),
+    (4, "skin", "skin", "Golden Fur", 180, {"image_url": "/shop/golden-fur.svg", "pet_layer": "skin", "pet_style": "gold"}),
+    (5, "skin", "skin", "Nebula Coat", 220, {"image_url": "/shop/nebula-coat.svg", "pet_layer": "skin", "pet_style": "nebula"}),
+    (6, "toy", "toy", "Coin Ball", 45, {"image_url": "/shop/coin-ball.svg", "pet_layer": "toy", "pet_asset": "/shop/coin-ball.svg"}),
+    (7, "toy", "toy", "Puzzle Cube", 55, {"image_url": "/shop/puzzle-cube.svg", "pet_layer": "toy", "pet_asset": "/shop/puzzle-cube.svg"}),
+    (8, "outfit", "body", "Trader Jacket", 130, {"image_url": "/shop/trader-jacket.svg", "pet_layer": "body", "pet_asset": "/shop/trader-jacket.svg"}),
+    (9, "habitat", "background", "Forest Home", 200, {"image_url": "/shop/forest-home.svg", "pet_layer": "background", "pet_style": "forest"}),
+    (10, "habitat", "background", "City Loft", 250, {"image_url": "/shop/city-loft.svg", "pet_layer": "background", "pet_style": "city"}),
+    (11, "habitat", "background", "Moon Base", 320, {"image_url": "/shop/moon-base.svg", "pet_layer": "background", "pet_style": "moon"}),
 ]
 
 
@@ -107,8 +107,16 @@ def seed_if_needed(db):
                 )
             )
 
-    if db.query(ShopItem).count() == 0:
-        for item_id, item_type, slot, name, cost in SHOP_ITEMS:
+    existing_items = {item.id: item for item in db.query(ShopItem).all()}
+    for item_id, item_type, slot, name, cost, metadata in SHOP_ITEMS:
+        if item_id in existing_items:
+            item = existing_items[item_id]
+            item.type = item_type
+            item.slot = slot
+            item.name = name
+            item.coin_cost = cost
+            item.metadata_json = metadata
+        else:
             db.add(
                 ShopItem(
                     id=item_id,
@@ -116,7 +124,7 @@ def seed_if_needed(db):
                     slot=slot,
                     name=name,
                     coin_cost=cost,
-                    metadata_json={},
+                    metadata_json=metadata,
                 )
             )
 

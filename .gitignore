@@ -9,3 +9,5 @@ node_modules/
 apps/api/investipet.db
 investipet.db
 .DS_Store
+infra/.api.env
+infra/.web.env

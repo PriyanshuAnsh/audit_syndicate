@@ -16,7 +16,12 @@ export default function DashboardPage() {
       <section className="glass grid gap-4 p-5 md:grid-cols-[1fr_1.1fr]">
         {me.data && (
           <div className="rounded-2xl bg-white/55">
-            <PetMascot stage={me.data.pet.stage} name={me.data.pet.name} level={me.data.pet.level} />
+            <PetMascot
+              stage={me.data.pet.stage}
+              name={me.data.pet.name}
+              level={me.data.pet.level}
+              // equippedItems={me.data.pet.equipped_items || []}
+            />
           </div>
         )}
         <div>

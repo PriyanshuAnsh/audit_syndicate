@@ -8,7 +8,7 @@ const links = [
   ["Trade", "/trade"],
   ["Portfolio", "/portfolio"],
   ["Learn", "/learn"],
-  ["Shop", "/shop"],
+  // ["Shop", "/shop"],
   ["Profile", "/profile"],
 ] as const;
 
