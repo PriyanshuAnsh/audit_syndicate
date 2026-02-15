@@ -39,6 +39,11 @@ export default function PetMascot({
       <div className="pet-aura" />
       <div className={`pet-wrap ${stageClass}`}>
         {/* Equipped overlays disabled */}
+        {!isEgg && (
+          <div className="pet-hand pet-hand-wave">
+            <span />
+          </div>
+        )}
         <div className="pet-ear pet-ear-left" />
         <div className="pet-ear pet-ear-right" />
         <div className={`pet-body ${skinClass}`}>
@@ -61,7 +66,6 @@ export default function PetMascot({
           )}
         </div>
         {/* Equipped overlays disabled */}
-        <div className="pet-tail" />
         <div className="pet-shadow" />
       </div>
     </div>
