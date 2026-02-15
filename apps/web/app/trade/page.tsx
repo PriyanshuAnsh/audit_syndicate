@@ -13,16 +13,20 @@ type Quote = {
 
 export default function TradePage() {
   const qc = useQueryClient();
+
   const quotes = useQuery<Quote[]>({
     queryKey: ["quotes"],
     queryFn: () => api("/market/quotes"),
   });
 
+  const me = useQuery({
+    queryKey: ["me"],
+    queryFn: () => api("/me"),
+  });
+
   const [symbol, setSymbol] = useState("AAPL");
   const [quantity, setQuantity] = useState("1");
   const [lastAction, setLastAction] = useState<"buy" | "sell" | null>(null);
-
-  // ✅ NEW STATE (Step 1)
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [pendingSide, setPendingSide] = useState<"buy" | "sell" | null>(null);
 
@@ -52,6 +56,9 @@ export default function TradePage() {
 
   const quantityNumber = Number(quantity) || 0;
   const notional = (selectedQuote?.price || 0) * quantityNumber;
+  const availableCash = me.data?.cash_balance ?? 0;
+  const insufficientFunds = notional > availableCash;
+  const isLargeTrade = notional > availableCash * 0.5;
 
   const isInvalid = !selectedQuote || quantityNumber <= 0;
 
@@ -64,16 +71,13 @@ export default function TradePage() {
           <div>
             <h1 className="page-title">Trade Terminal</h1>
             <p className="page-subtitle">
-              Execute simulated market orders with real-time quote context and
-              clean order controls.
+              Execute simulated market orders with real-time quote context.
             </p>
           </div>
           <div className="grid min-w-[240px] grid-cols-2 gap-2 text-sm">
             <div className="rounded-xl bg-white/80 p-3">
               <p className="text-slate-500">Selected Symbol</p>
-              <p className="text-lg font-semibold">
-                {symbol.toUpperCase()}
-              </p>
+              <p className="text-lg font-semibold">{symbol.toUpperCase()}</p>
             </div>
             <div className="rounded-xl bg-white/80 p-3">
               <p className="text-slate-500">Last Price</p>
@@ -88,6 +92,7 @@ export default function TradePage() {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[1.3fr_1fr]">
+        {/* LEFT SIDE */}
         <div className="glass overflow-hidden">
           <div className="border-b border-slate-200/70 bg-white/70 px-4 py-3">
             <h2 className="text-lg font-semibold">Market Watchlist</h2>
@@ -149,27 +154,21 @@ export default function TradePage() {
           </div>
         </div>
 
+        {/* RIGHT SIDE */}
         <div className="space-y-4">
           <div className="glass p-4">
             <h2 className="mb-3 text-lg font-semibold">
               Order Ticket
             </h2>
 
-            <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Symbol
-            </label>
             <input
               className="input mb-3"
               value={symbol}
               onChange={(e) =>
                 setSymbol(e.target.value.toUpperCase())
               }
-              placeholder="AAPL"
             />
 
-            <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Quantity
-            </label>
             <input
               className="input mb-3"
               value={quantity}
@@ -178,7 +177,6 @@ export default function TradePage() {
               }
               type="number"
               min="1"
-              step="1"
             />
 
             <div className="mb-3 rounded-xl bg-white/80 p-3 text-sm">
@@ -194,10 +192,9 @@ export default function TradePage() {
               </div>
             </div>
 
-            {/* ✅ UPDATED BUTTONS */}
             <div className="flex gap-2">
               <button
-                disabled={isInvalid}
+                disabled={isInvalid || insufficientFunds}
                 className="flex-1 rounded-xl bg-emerald-700 px-4 py-2 font-medium text-white transition hover:bg-emerald-800 disabled:bg-slate-400"
                 onClick={() => {
                   setPendingSide("buy");
@@ -219,6 +216,13 @@ export default function TradePage() {
               </button>
             </div>
 
+            {insufficientFunds && (
+              <p className="mt-2 text-sm text-rose-600">
+                Insufficient funds. Available: $
+                {availableCash.toFixed(2)}
+              </p>
+            )}
+
             {trade.isPending && (
               <p className="mt-2 text-sm text-slate-600">
                 Submitting order...
@@ -235,7 +239,6 @@ export default function TradePage() {
         </div>
       </div>
 
-      {/* ✅ CONFIRMATION MODAL */}
       {confirmOpen && pendingSide && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
@@ -251,6 +254,13 @@ export default function TradePage() {
                 : "--"}
               ?
             </p>
+
+            {isLargeTrade && (
+              <div className="mt-3 rounded-lg bg-yellow-100 p-3 text-sm text-yellow-800">
+                ⚠ This order uses more than 50% of your available
+                capital. Consider diversification.
+              </div>
+            )}
 
             <div className="mt-6 flex gap-2">
               <button
