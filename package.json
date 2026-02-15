@@ -7,5 +7,8 @@
   "scripts": {
     "dev:web": "npm --workspace apps/web run dev",
     "build:web": "npm --workspace apps/web run build"
+  },
+  "dependencies": {
+    "next-auth": "^4.24.13"
   }
 }

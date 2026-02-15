@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Nav from "../../components/nav";
 import { api } from "../../lib/api";
@@ -53,6 +54,8 @@ const COLORS = [
 ];
 
 export default function PortfolioPage() {
+  const [showExplanation, setShowExplanation] = useState(false);
+
   const portfolio = useQuery<PortfolioResponse>({
     queryKey: ["portfolio"],
     queryFn: () => api("/portfolio"),
@@ -108,10 +111,7 @@ export default function PortfolioPage() {
           value={formatSignedMoney(data.total_pl)}
           positive={data.total_pl >= 0}
         />
-        <KPI
-          title="Diversification"
-          value={`${data.diversification_score}%`}
-        />
+        <KPI title="Diversification" value={`${data.diversification_score}%`} />
       </div>
 
       {/* Charts */}
@@ -131,17 +131,12 @@ export default function PortfolioPage() {
                     label
                   >
                     {chartData.map((_, index) => (
-                      <Cell
-                        key={index}
-                        fill={COLORS[index % COLORS.length]}
-                      />
+                      <Cell key={index} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
 
                   <Tooltip
-                    formatter={(value) =>
-                      formatMoney(Number(value ?? 0))
-                    }
+                    formatter={(value) => formatMoney(Number(value ?? 0))}
                   />
                 </PieChart>
               </ResponsiveContainer>
@@ -158,9 +153,7 @@ export default function PortfolioPage() {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip
-                    formatter={(value) =>
-                      formatMoney(Number(value ?? 0))
-                    }
+                    formatter={(value) => formatMoney(Number(value ?? 0))}
                   />
                   <Bar dataKey="value" fill="#6366f1" />
                 </BarChart>
@@ -205,9 +198,7 @@ export default function PortfolioPage() {
                 <td className="p-2">{formatMoney(p.market_value)}</td>
                 <td
                   className={`p-2 font-medium ${
-                    p.unrealized_pl >= 0
-                      ? "text-emerald-600"
-                      : "text-red-600"
+                    p.unrealized_pl >= 0 ? "text-emerald-600" : "text-red-600"
                   }`}
                 >
                   {formatSignedMoney(p.unrealized_pl)}
@@ -218,6 +209,95 @@ export default function PortfolioPage() {
           </tbody>
         </table>
       </div>
+
+      {/* Explain Button */}
+      <div className="flex justify-center mt-6">
+        <button
+          className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
+          onClick={() => setShowExplanation(true)}
+        >
+          What is this page?
+        </button>
+      </div>
+
+      {/* Modal */}
+      {showExplanation && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 w-11/12 md:w-2/3 max-w-2xl shadow-lg animate-fadeIn">
+            <h2 className="text-xl font-bold mb-4 text-indigo-600">
+              Portfolio Page Guide
+            </h2>
+            <ul className="list-disc pl-5 space-y-3 text-slate-700 text-sm">
+              <li>
+                <strong>💰 Cash:</strong> Your available virtual money.
+                <span className="text-slate-500">
+                  {" "}
+                  Example: if you have $1,000 cash, you can use it to buy stocks
+                  or crypto in the game. Your pet might “jump with excitement”
+                  when you make smart purchases!
+                </span>
+              </li>
+              <li>
+                <strong>📈 Total Value:</strong> Cash + value of all your
+                investments.
+                <span className="text-slate-500">
+                  {" "}
+                  Think of it as your pet's treasure chest—how big it is now
+                  depends on both what you have in hand and what your
+                  investments are worth.
+                </span>
+              </li>
+              <li>
+                <strong>🎯 Unrealized P/L:</strong> Your current profit or loss
+                on investments.
+                <span className="text-slate-500">
+                  {" "}
+                  If MSFT goes up $25, your pet cheers! If it goes down, your
+                  pet looks a little sad. It’s a fun way to see your portfolio
+                  health.
+                </span>
+              </li>
+              <li>
+                <strong>⚖️ Diversification:</strong> How balanced your portfolio
+                is across different assets.
+                <span className="text-slate-500">
+                  {" "}
+                  Like having a mix of toys for your pet—more balance means
+                  safer growth.
+                </span>
+              </li>
+              <li>
+                <strong>📊 Positions Table:</strong> Shows all your current
+                holdings with details: quantity, cost, current price, value,
+                P/L, and allocation.
+                <span className="text-slate-500">
+                  {" "}
+                  Think of each row as one of your pet's items, showing stats
+                  and how important it is in the collection.
+                </span>
+              </li>
+              <li>
+                <strong>🎨 Charts:</strong> Visual help to see your portfolio at
+                a glance.
+                <span className="text-slate-500">
+                  {" "}
+                  Pie chart = how your money is spread; Bar chart = which
+                  positions are strongest. Your pet “lives” through your
+                  portfolio’s growth!
+                </span>
+              </li>
+            </ul>
+            <div className="mt-5 text-right">
+              <button
+                className="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400 transition"
+                onClick={() => setShowExplanation(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -240,8 +320,8 @@ function KPI({
           positive === undefined
             ? ""
             : positive
-            ? "text-emerald-600"
-            : "text-red-600"
+              ? "text-emerald-600"
+              : "text-red-600"
         }`}
       >
         {value}
