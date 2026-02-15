@@ -21,12 +21,17 @@ export default function DashboardPage() {
   const totalXP = me.data.xp_total;
 
   // ===== XP LOGIC =====
-  const xpNeeded = level * 100;
-  const currentLevelXP = totalXP % xpNeeded;
-  const xpProgressPercent = Math.min(
-    (currentLevelXP / xpNeeded) * 100,
-    100
-  );
+  // Keep in sync with backend LEVEL_THRESHOLDS.
+  const LEVEL_THRESHOLDS = [0, 100, 250, 450, 700, 1000, 1400, 1850];
+  const levelIndex = Math.max(0, Math.min(level - 1, LEVEL_THRESHOLDS.length - 1));
+  const currentThreshold = LEVEL_THRESHOLDS[levelIndex];
+  const nextThreshold = LEVEL_THRESHOLDS[levelIndex + 1];
+  const isMaxLevel = nextThreshold === undefined;
+  const xpNeeded = isMaxLevel ? 0 : nextThreshold - currentThreshold;
+  const currentLevelXP = isMaxLevel ? totalXP - currentThreshold : totalXP - currentThreshold;
+  const xpProgressPercent = isMaxLevel
+    ? 100
+    : Math.min(Math.max((currentLevelXP / xpNeeded) * 100, 0), 100);
 
   // ===== HUNGER + HEALTH =====
   // Assumes backend returns:
@@ -76,7 +81,7 @@ export default function DashboardPage() {
             <div className="flex justify-between text-sm font-medium">
               <span>XP</span>
               <span>
-                {currentLevelXP} / {xpNeeded}
+                {isMaxLevel ? "MAX" : `${currentLevelXP} / ${xpNeeded}`}
               </span>
             </div>
             <div className="h-4 w-full rounded-full bg-slate-200 overflow-hidden">

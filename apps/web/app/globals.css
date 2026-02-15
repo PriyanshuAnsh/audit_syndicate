@@ -99,6 +99,39 @@ body {
   color: var(--brand-strong);
 }
 
+.landing-mascot-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+.mascot-speech {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(29, 38, 56, 0.16);
+  background: #ffffff;
+  color: #1d2638;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(29, 38, 56, 0.12);
+  white-space: nowrap;
+}
+
+.mascot-speech::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
+}
+
 @keyframes learnSlideRight {
   from {
     opacity: 0;
@@ -129,6 +162,32 @@ body {
 
 .learn-correct-pop {
   animation: learnCorrectPop 320ms ease-out;
+}
+
+@keyframes handWave {
+  0% { transform: rotate(8deg); }
+  20% { transform: rotate(24deg); }
+  40% { transform: rotate(6deg); }
+  60% { transform: rotate(20deg); }
+  80% { transform: rotate(9deg); }
+  100% { transform: rotate(8deg); }
+}
+
+@keyframes caretBlink {
+  0%, 50% { border-color: #1d2638; }
+  51%, 100% { border-color: transparent; }
+}
+
+.typing-live {
+  display: inline-block;
+  min-height: 1.2em;
+  white-space: nowrap;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: caretBlink 0.9s step-end infinite;
 }
 
 @keyframes petFloat {
@@ -302,6 +361,83 @@ body {
   border: 3px solid #1d2638;
   transform-origin: left center;
   animation: petTail 1.25s ease-in-out infinite;
+}
+
+.pet-hand {
+  position: absolute;
+  top: 118px;
+  right: 10px;
+  width: 34px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(165deg, #8ff1e1 0%, #53d9c1 100%);
+  border: 3px solid #1d2638;
+  transform-origin: left center;
+  z-index: 3;
+}
+
+.pet-hand-wave {
+  animation: handWave 1.7s ease-in-out infinite;
+}
+
+.pet-hand::after {
+  content: none;
+}
+
+.pet-hand::before {
+  content: none;
+}
+
+.pet-hand-wave span,
+.pet-hand-wave i {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  border: 2px solid #1d2638;
+  background: linear-gradient(165deg, #9df3e6 0%, #62dfca 100%);
+}
+
+.pet-hand-wave span {
+  right: -11px;
+  top: -7px;
+  width: 8px;
+  height: 10px;
+}
+
+.pet-hand-wave i {
+  right: -3px;
+  top: -9px;
+  width: 8px;
+  height: 11px;
+}
+
+.pet-scene-compact .pet-hand {
+  top: 96px;
+  right: 12px;
+  width: 26px;
+  height: 11px;
+}
+
+.pet-scene-compact .pet-hand::after {
+  content: none;
+}
+
+.pet-scene-compact .pet-hand::before {
+  content: none;
+}
+
+.pet-scene-compact .pet-hand-wave span {
+  right: -8px;
+  top: -6px;
+  width: 6px;
+  height: 7px;
+}
+
+.pet-scene-compact .pet-hand-wave i {
+  right: -1px;
+  top: -7px;
+  width: 6px;
+  height: 8px;
 }
 
 .pet-shadow {
