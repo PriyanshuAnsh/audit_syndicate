@@ -229,7 +229,7 @@ export default function PortfolioPage() {
             </h2>
             <ul className="list-disc pl-5 space-y-3 text-slate-700 text-sm">
               <li>
-                <strong>💰 Cash:</strong> Your available virtual money.
+                <strong> Cash:</strong> Your available virtual money.
                 <span className="text-slate-500">
                   {" "}
                   Example: if you have $1,000 cash, you can use it to buy stocks
@@ -238,7 +238,7 @@ export default function PortfolioPage() {
                 </span>
               </li>
               <li>
-                <strong>📈 Total Value:</strong> Cash + value of all your
+                <strong> Total Value:</strong> Cash + value of all your
                 investments.
                 <span className="text-slate-500">
                   {" "}
@@ -248,17 +248,17 @@ export default function PortfolioPage() {
                 </span>
               </li>
               <li>
-                <strong>🎯 Unrealized P/L:</strong> Your current profit or loss
+                <strong> Unrealized P/L:</strong> Your current profit or loss
                 on investments.
                 <span className="text-slate-500">
                   {" "}
                   If MSFT goes up $25, your pet cheers! If it goes down, your
-                  pet looks a little sad. It’s a fun way to see your portfolio
+                  pet looks a little sad. It's a fun way to see your portfolio
                   health.
                 </span>
               </li>
               <li>
-                <strong>⚖️ Diversification:</strong> How balanced your portfolio
+                <strong> Diversification:</strong> How balanced your portfolio
                 is across different assets.
                 <span className="text-slate-500">
                   {" "}
@@ -267,7 +267,7 @@ export default function PortfolioPage() {
                 </span>
               </li>
               <li>
-                <strong>📊 Positions Table:</strong> Shows all your current
+                <strong> Positions Table:</strong> Shows all your current
                 holdings with details: quantity, cost, current price, value,
                 P/L, and allocation.
                 <span className="text-slate-500">
@@ -277,13 +277,13 @@ export default function PortfolioPage() {
                 </span>
               </li>
               <li>
-                <strong>🎨 Charts:</strong> Visual help to see your portfolio at
+                <strong> Charts:</strong> Visual help to see your portfolio at
                 a glance.
                 <span className="text-slate-500">
                   {" "}
                   Pie chart = how your money is spread; Bar chart = which
                   positions are strongest. Your pet “lives” through your
-                  portfolio’s growth!
+                  portfolio's growth!
                 </span>
               </li>
             </ul>
