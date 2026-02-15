@@ -9,6 +9,8 @@ from sqlalchemy.orm import Session
 from .config import settings
 from .models import Asset, Inventory, Pet, Position, RewardEvent, ShopItem, Wallet
 
+# Hunger constant
+HUNGER_DECAY_PER_DAY = 10
 
 LEVEL_THRESHOLDS = [0, 100, 250, 450, 700, 1000, 1400, 1850]
 STAGE_BY_LEVEL = {
@@ -202,3 +204,15 @@ def pet_equipped_items(db: Session, user_id: int) -> list[dict]:
         }
         for _, item in rows
     ]
+
+def apply_hunger_decay(pet):
+    now = datetime.now(UTC).replace(tzinfo=None)
+    last = pet.last_hunger_tick
+
+    days_passed = (now - last).days
+
+    if days_passed > 0:
+        pet.hunger = max(0, pet.hunger - days_passed * HUNGER_DECAY_PER_DAY)
+        pet.last_hunger_tick = now
+
+    return pet

@@ -47,6 +47,11 @@ class Pet(Base):
     xp_current: Mapped[int] = mapped_column(Integer, default=0)
     stage: Mapped[str] = mapped_column(String, default="egg")
     species: Mapped[str] = mapped_column(String, default="sproutfox")
+    
+    # NEW FIELDS
+    hunger: Mapped[int] = mapped_column(Integer, default=100)
+    last_hunger_tick: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    
 
 
 class Asset(Base):

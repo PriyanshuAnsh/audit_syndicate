@@ -64,10 +64,6 @@ export default function PetMascot({
         <div className="pet-tail" />
         <div className="pet-shadow" />
       </div>
-      <div className="pet-card glass">
-        <p className="pet-name">{name}</p>
-        <p className="pet-meta">Level {level} • {stage}</p>
-      </div>
     </div>
   );
 }

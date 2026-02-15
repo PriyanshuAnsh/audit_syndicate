@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from ..config import settings
 from ..database import get_db
 from ..deps import current_user
-from ..models import Lesson, LessonProgress, User
+from ..models import Lesson, LessonProgress, User, Pet
 from ..schemas import LessonOut, LessonSubmitRequest
 from ..services import grant_reward
 
@@ -110,6 +110,11 @@ def submit_lesson(
             "lesson_perfect",
             f"{lesson.id}:{payload.idempotency_key}",
         )
+    pet = db.query(Pet).filter(Pet.user_id == user.id).first()
 
+    if pet and score >= 60:
+        HUNGER_RESTORE = 20
+        pet.hunger = min(100, pet.hunger + HUNGER_RESTORE)
+    
     db.commit()
     return {"completed": True, "score": score}
