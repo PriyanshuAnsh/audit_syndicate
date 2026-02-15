@@ -127,6 +127,7 @@ def grant_reward(db: Session, user_id: int, source: str, xp: int, coins: int, re
     pet.level = new_level
     pet.xp_current = xp_current
     pet.stage = stage_for_level(new_level)
+    pet.last_hunger_tick = datetime.now(timezone.utc).replace(tzinfo=None)
 
     db.add(
         RewardEvent(

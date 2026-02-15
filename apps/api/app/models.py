@@ -50,7 +50,7 @@ class Pet(Base):
     
     # NEW FIELDS
     hunger: Mapped[int] = mapped_column(Integer, default=100)
-    last_hunger_tick: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    last_hunger_tick: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     
 
 

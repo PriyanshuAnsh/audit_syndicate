@@ -26,9 +26,23 @@ export default function LearnPage() {
         method: "POST",
         body: JSON.stringify({ answers, idempotency_key: randomKey() }),
       }),
-    onSuccess: () => {
+    onSuccess: (data) => {
+      // ===== Updated: invalidate lessons and me properly =====
       qc.invalidateQueries({ queryKey: ["lessons"] });
-      qc.invalidateQueries({ queryKey: ["me"] });
+      qc.invalidateQueries({ queryKey: ["me"], refetchActive: true, refetchInactive: true });
+
+      // ===== Optimistic update: update hunger immediately =====
+      qc.setQueryData(["me"], (old: any) => {
+        if (!old) return old;
+        const hungerIncrease = data.score >= 60 ? 20 : 0;
+        return {
+          ...old,
+          pet: {
+            ...old.pet,
+            hunger: Math.min((old.pet.hunger ?? 0) + hungerIncrease, 100),
+          },
+        };
+      });
     },
   });
 

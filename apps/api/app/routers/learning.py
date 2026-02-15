@@ -81,16 +81,16 @@ def submit_lesson(
         progress = LessonProgress(user_id=user.id, lesson_id=lesson.id)
         db.add(progress)
 
-    correct = 0
-    for q in lesson.quiz_json:
-        if payload.answers.get(q["id"]) == q["answer"]:
-            correct += 1
+    correct = sum(
+        1 for q in lesson.quiz_json if payload.answers.get(q["id"]) == q["answer"]
+    )
     score = round((correct / max(1, len(lesson.quiz_json))) * 100, 2)
 
     progress.status = "completed"
     progress.score = score
     progress.completed_at = datetime.now(UTC).replace(tzinfo=None)
 
+    # grant rewards
     grant_reward(
         db,
         user.id,
@@ -110,11 +110,21 @@ def submit_lesson(
             "lesson_perfect",
             f"{lesson.id}:{payload.idempotency_key}",
         )
-    pet = db.query(Pet).filter(Pet.user_id == user.id).first()
 
-    if pet and score >= 60:
-        HUNGER_RESTORE = 20
-        pet.hunger = min(100, pet.hunger + HUNGER_RESTORE)
-    
+    # ================== RESTORE PET HUNGER ==================
+    pet = db.query(Pet).filter(Pet.user_id == user.id).first()
+    if pet:
+        print(f"[DEBUG] Pet before hunger update: hunger={pet.hunger}, last_hunger_tick={pet.last_hunger_tick}")
+        if score >= 60:
+            HUNGER_RESTORE = 20
+            pet.hunger = min(100, pet.hunger + HUNGER_RESTORE)
+            pet.last_hunger_tick = datetime.now(UTC).replace(tzinfo=None)
+            db.add(pet)
+            print(f"[DEBUG] Pet after hunger update: hunger={pet.hunger}, last_hunger_tick={pet.last_hunger_tick}")
+        else:
+            print(f"[DEBUG] Score < 60, hunger not updated: {score}")
+
     db.commit()
+    print(f"[DEBUG] Lesson submitted: lesson_id={lesson_id}, user_id={user.id}, score={score}")
     return {"completed": True, "score": score}
+

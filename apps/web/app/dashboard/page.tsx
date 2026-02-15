@@ -11,35 +11,29 @@ export default function DashboardPage() {
   const rewards = useQuery({
     queryKey: ["rewards"],
     queryFn: () => api("/rewards/history"),
+    staleTime: 0,
   });
 
   const [showAllRewards, setShowAllRewards] = useState(false);
 
   if (!me.data) return null;
 
-  const level = me.data.pet.level;
-  const totalXP = me.data.xp_total;
+  const pet = me.data.pet;
 
   // ===== XP LOGIC =====
-  const xpNeeded = level * 100;
-  const currentLevelXP = totalXP % xpNeeded;
-  const xpProgressPercent = Math.min(
-    (currentLevelXP / xpNeeded) * 100,
-    100
-  );
+  const level = pet.level;
+  const currentLevelXP = pet.xp_current; // already current level XP
+  const xpNeeded = level * 100; // same as backend logic
+  const xpProgressPercent = Math.min((currentLevelXP / xpNeeded) * 100, 100);
 
   // ===== HUNGER + HEALTH =====
-  // Assumes backend returns:
-  // me.data.pet.hunger (0-100)
-  // me.data.financial_health (0-100)
+  const hunger = pet.current_hunger ?? 0; // from /me backend
+  console.log("Current Hunger:", pet.current_hunger); // Debug log to verify hunger value
+  const health = me.data.financial_health ?? 80; // computed backend value
 
-  const hunger = me.data.pet.hunger ?? 75;
-  const health = me.data.financial_health ?? 80;
-
+  // ===== REWARDS LIST =====
   const rewardList = rewards.data || [];
-  const visibleRewards = showAllRewards
-    ? rewardList
-    : rewardList.slice(0, 1);
+  const visibleRewards = showAllRewards ? rewardList : rewardList.slice(0, 1);
 
   return (
     <div className="space-y-6 pb-10">
@@ -52,22 +46,16 @@ export default function DashboardPage() {
       <section className="glass grid gap-6 p-6 md:grid-cols-[1fr_1.4fr]">
         {/* PET VISUAL */}
         <div className="flex items-center justify-center rounded-2xl bg-white/55 p-6">
-          <PetMascot
-            stage={me.data.pet.stage}
-            name={me.data.pet.name}
-            level={level}
-          />
+          <PetMascot stage={pet.stage} name={pet.name} level={level} />
         </div>
 
         {/* PET STATUS */}
         <div className="flex flex-col justify-center space-y-6">
           {/* NAME + LEVEL (LARGER) */}
           <div>
-            <h1 className="text-3xl font-bold">
-              {me.data.pet.name}
-            </h1>
+            <h1 className="text-3xl font-bold">{pet.name}</h1>
             <p className="text-lg text-slate-600">
-              Level {level} • {me.data.pet.stage}
+              Level {level} • {pet.stage}
             </p>
           </div>
 
@@ -134,31 +122,23 @@ export default function DashboardPage() {
 
         <div className="kpi hover:scale-[1.02] transition">
           <p className="text-sm text-slate-500">Coins</p>
-          <p className="text-2xl font-semibold">
-            {me.data.coins_balance}
-          </p>
+          <p className="text-2xl font-semibold">{me.data.coins_balance}</p>
         </div>
 
         <div className="kpi hover:scale-[1.02] transition">
           <p className="text-sm text-slate-500">Total XP Earned</p>
-          <p className="text-2xl font-semibold">
-            {totalXP}
-          </p>
+          <p className="text-2xl font-semibold">{me.data.xp_total}</p>
         </div>
       </div>
 
       {/* ================= RECENT REWARDS ================= */}
       <section className="glass p-6">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold">
-            Recent Rewards
-          </h2>
+          <h2 className="text-lg font-semibold">Recent Rewards</h2>
 
           {rewardList.length > 1 && (
             <button
-              onClick={() =>
-                setShowAllRewards(!showAllRewards)
-              }
+              onClick={() => setShowAllRewards(!showAllRewards)}
               className="text-sm font-medium text-indigo-600 hover:underline"
             >
               {showAllRewards ? "Show Less" : "Show More"}
@@ -167,9 +147,7 @@ export default function DashboardPage() {
         </div>
 
         {rewardList.length === 0 && (
-          <p className="text-sm text-slate-500">
-            No rewards yet.
-          </p>
+          <p className="text-sm text-slate-500">No rewards yet.</p>
         )}
 
         <ul className="space-y-3">
@@ -183,19 +161,13 @@ export default function DashboardPage() {
                   {event.source.replace("_", " ")}
                 </p>
                 <p className="text-xs text-slate-500">
-                  {new Date(
-                    event.created_at
-                  ).toLocaleString()}
+                  {new Date(event.created_at).toLocaleString()}
                 </p>
               </div>
 
               <div className="text-sm font-medium text-right">
-                <p className="text-green-600">
-                  +{event.xp_delta} XP
-                </p>
-                <p className="text-yellow-600">
-                  +{event.coin_delta} Coins
-                </p>
+                <p className="text-green-600">+{event.xp_delta} XP</p>
+                <p className="text-yellow-600">+{event.coin_delta} Coins</p>
               </div>
             </li>
           ))}
