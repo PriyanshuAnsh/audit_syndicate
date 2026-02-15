@@ -33,6 +33,11 @@ class LessonSubmitRequest(BaseModel):
     idempotency_key: str
 
 
+class LessonCheckRequest(BaseModel):
+    question_id: str
+    answer: str
+
+
 class PurchaseRequest(BaseModel):
     item_id: int
 
@@ -87,8 +92,19 @@ class LessonOut(BaseModel):
     title: str
     body: str
     quiz: list[dict]
+    question_count: int
+    reward_xp: int
+    reward_coins: int
     completed: bool
     score: float | None
+
+
+class LessonListOut(BaseModel):
+    items: list[LessonOut]
+    page: int
+    page_size: int
+    total: int
+    total_pages: int
 
 
 class PetOut(BaseModel):

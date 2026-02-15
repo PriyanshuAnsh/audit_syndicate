@@ -100,6 +100,18 @@ class Lesson(Base):
     reward_coins: Mapped[int] = mapped_column(Integer)
 
 
+class LessonQuestion(Base):
+    __tablename__ = "lesson_questions"
+    __table_args__ = (UniqueConstraint("lesson_id", "question_key", name="uq_lesson_question_key"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    lesson_id: Mapped[int] = mapped_column(ForeignKey("lessons.id"), index=True)
+    question_key: Mapped[str] = mapped_column(String, index=True)
+    question_text: Mapped[str] = mapped_column(String)
+    options_json: Mapped[list] = mapped_column(JSON)
+    answer: Mapped[str] = mapped_column(String)
+
+
 class LessonProgress(Base):
     __tablename__ = "lesson_progress"
     __table_args__ = (UniqueConstraint("user_id", "lesson_id", name="uq_user_lesson"),)

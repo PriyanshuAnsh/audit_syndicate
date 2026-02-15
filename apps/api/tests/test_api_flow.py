@@ -52,8 +52,8 @@ def test_full_mvp_flow(client: TestClient):
 
     lessons = client.get("/lessons", headers=auth_headers(access))
     assert lessons.status_code == 200
-    lesson_id = lessons.json()[0]["id"]
-    quiz = lessons.json()[0]["quiz"]
+    lesson_id = lessons.json()["items"][0]["id"]
+    quiz = lessons.json()["items"][0]["quiz"]
 
     submit = client.post(
         f"/lessons/{lesson_id}/submit",

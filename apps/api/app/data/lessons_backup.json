@@ -1,0 +1,2684 @@
+[
+  {
+    "id": 1,
+    "title": "Diversification Fundamentals",
+    "body": "How to spread risk across assets and sectors.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l1_q1",
+        "question": "Diversification Fundamentals: which behavior is healthiest?",
+        "options": [
+          "Large emotional bets",
+          "Frequent revenge trades",
+          "Small repeatable actions"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l1_q2",
+        "question": "Diversification Fundamentals: when should you change strategy?",
+        "options": [
+          "After one bad day",
+          "After seeing one viral post",
+          "When goals/constraints change"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l1_q3",
+        "question": "Diversification Fundamentals: for portfolio health, track:",
+        "options": [
+          "Allocation, risk, and progress",
+          "Only best-performing symbol",
+          "Only account balance"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l1_q4",
+        "question": "Diversification Fundamentals: why keep an emergency fund?",
+        "options": [
+          "Avoid forced selling",
+          "Increase FOMO buying",
+          "Guarantee profits"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l1_q5",
+        "question": "Diversification Fundamentals: what is a red flag?",
+        "options": [
+          "Diversified exposure",
+          "No risk limits",
+          "Long-term plan"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l1_q6",
+        "question": "Diversification Fundamentals: risk tolerance should be linked to:",
+        "options": [
+          "Daily news feed",
+          "Goals and horizon",
+          "Peer pressure"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l1_q7",
+        "question": "Diversification Fundamentals: ETF advantage for beginners is often:",
+        "options": [
+          "Guaranteed outperformance",
+          "No volatility",
+          "Diversification with low complexity"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l1_q8",
+        "question": "For Diversification Fundamentals, which metric is useful?",
+        "options": [
+          "Only social sentiment",
+          "Drawdown and diversification",
+          "Only daily gains"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l1_q9",
+        "question": "For Diversification Fundamentals, good decision-making is based on:",
+        "options": [
+          "Random luck",
+          "Rumors and FOMO",
+          "Rules and data"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l1_q10",
+        "question": "Diversification Fundamentals: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be eliminated entirely",
+          "Risk can be managed, not removed"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l1_q11",
+        "question": "Diversification Fundamentals: market timing is usually:",
+        "options": [
+          "Easy with one indicator",
+          "Risk-free",
+          "Hard to do consistently"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l1_q12",
+        "question": "Diversification Fundamentals: compounding works best with:",
+        "options": [
+          "Time and consistency",
+          "Constant strategy switching",
+          "Frequent all-in bets"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l1_q13",
+        "question": "Diversification Fundamentals: what is a healthy loss response?",
+        "options": [
+          "Blame randomness only",
+          "Double position size immediately",
+          "Review process and risk controls"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l1_q14",
+        "question": "Diversification Fundamentals: what is position sizing for?",
+        "options": [
+          "Maximizing emotional comfort",
+          "Ignoring portfolio context",
+          "Limiting single-trade damage"
+        ],
+        "answer": "Limiting single-trade damage"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Risk and Return",
+    "body": "Understanding volatility, drawdowns, and expected returns.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l2_q1",
+        "question": "Risk and Return: what is a disciplined rebalance action?",
+        "options": [
+          "Always add to hottest asset",
+          "Ignore allocation drift",
+          "Trim overweight positions"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l2_q2",
+        "question": "Risk and Return: market timing is usually:",
+        "options": [
+          "Easy with one indicator",
+          "Risk-free",
+          "Hard to do consistently"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l2_q3",
+        "question": "Risk and Return: what is position sizing for?",
+        "options": [
+          "Maximizing emotional comfort",
+          "Ignoring portfolio context",
+          "Limiting single-trade damage"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l2_q4",
+        "question": "For Risk and Return, what lowers avoidable risk?",
+        "options": [
+          "Ignore position sizing",
+          "Diversify exposure",
+          "All-in on one position"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l2_q5",
+        "question": "Risk and Return: why keep an emergency fund?",
+        "options": [
+          "Guarantee profits",
+          "Avoid forced selling",
+          "Increase FOMO buying"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l2_q6",
+        "question": "Risk and Return: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "Sized within total risk budget",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l2_q7",
+        "question": "Risk and Return: what supports long-term returns?",
+        "options": [
+          "Buying only after large spikes",
+          "Jumping in and out emotionally",
+          "Staying invested through cycles"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l2_q8",
+        "question": "Risk and Return: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After one bad day",
+          "After seeing one viral post"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l2_q9",
+        "question": "For Risk and Return, good decision-making is based on:",
+        "options": [
+          "Rules and data",
+          "Random luck",
+          "Rumors and FOMO"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l2_q10",
+        "question": "Risk and Return: what is a red flag?",
+        "options": [
+          "Diversified exposure",
+          "No risk limits",
+          "Long-term plan"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l2_q11",
+        "question": "For Risk and Return, a checklist before action should include:",
+        "options": [
+          "Risk, size, and rationale",
+          "Only momentum",
+          "Only community hype"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l2_q12",
+        "question": "Risk and Return: risk tolerance should be linked to:",
+        "options": [
+          "Daily news feed",
+          "Peer pressure",
+          "Goals and horizon"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l2_q13",
+        "question": "Risk and Return: what is a practical beginner approach?",
+        "options": [
+          "Use max leverage",
+          "Trade every headline",
+          "Use broad diversified exposure"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l2_q14",
+        "question": "For Risk and Return, which metric is useful?",
+        "options": [
+          "Only daily gains",
+          "Drawdown and diversification",
+          "Only social sentiment"
+        ],
+        "answer": "Drawdown and diversification"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Budgeting for Investing",
+    "body": "Create repeatable monthly investing contributions.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l3_q1",
+        "question": "Budgeting for Investing: what helps avoid bias?",
+        "options": [
+          "Copying anonymous calls",
+          "Gut feeling only",
+          "Documented rules"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l3_q2",
+        "question": "Budgeting for Investing: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be managed, not removed",
+          "Risk can be eliminated entirely"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l3_q3",
+        "question": "Budgeting for Investing: why keep an emergency fund?",
+        "options": [
+          "Increase FOMO buying",
+          "Avoid forced selling",
+          "Guarantee profits"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l3_q4",
+        "question": "Budgeting for Investing: what helps during volatility?",
+        "options": [
+          "Doubling losses quickly",
+          "Panic selling",
+          "Predefined allocation bands"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l3_q5",
+        "question": "Budgeting for Investing: which behavior is healthiest?",
+        "options": [
+          "Frequent revenge trades",
+          "Large emotional bets",
+          "Small repeatable actions"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l3_q6",
+        "question": "Budgeting for Investing: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "Sized within total risk budget",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l3_q7",
+        "question": "Budgeting for Investing: when should you change strategy?",
+        "options": [
+          "After seeing one viral post",
+          "After one bad day",
+          "When goals/constraints change"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l3_q8",
+        "question": "Budgeting for Investing: what is a healthy loss response?",
+        "options": [
+          "Blame randomness only",
+          "Double position size immediately",
+          "Review process and risk controls"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l3_q9",
+        "question": "Budgeting for Investing: compounding works best with:",
+        "options": [
+          "Constant strategy switching",
+          "Time and consistency",
+          "Frequent all-in bets"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l3_q10",
+        "question": "In Budgeting for Investing, what habit improves consistency?",
+        "options": [
+          "Trade on impulse",
+          "Follow a written plan",
+          "Chase social media tips"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l3_q11",
+        "question": "For Budgeting for Investing, good decision-making is based on:",
+        "options": [
+          "Random luck",
+          "Rumors and FOMO",
+          "Rules and data"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l3_q12",
+        "question": "Budgeting for Investing: ETF advantage for beginners is often:",
+        "options": [
+          "Diversification with low complexity",
+          "Guaranteed outperformance",
+          "No volatility"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l3_q13",
+        "question": "Budgeting for Investing: what is position sizing for?",
+        "options": [
+          "Limiting single-trade damage",
+          "Ignoring portfolio context",
+          "Maximizing emotional comfort"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l3_q14",
+        "question": "Budgeting for Investing: for portfolio health, track:",
+        "options": [
+          "Allocation, risk, and progress",
+          "Only best-performing symbol",
+          "Only account balance"
+        ],
+        "answer": "Allocation, risk, and progress"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Emergency Fund Strategy",
+    "body": "Build a safety net before taking investment risk.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l4_q1",
+        "question": "Emergency Fund Strategy: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Daily news feed",
+          "Peer pressure"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l4_q2",
+        "question": "Emergency Fund Strategy: what is a healthy loss response?",
+        "options": [
+          "Review process and risk controls",
+          "Blame randomness only",
+          "Double position size immediately"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l4_q3",
+        "question": "For Emergency Fund Strategy, which metric is useful?",
+        "options": [
+          "Only social sentiment",
+          "Only daily gains",
+          "Drawdown and diversification"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l4_q4",
+        "question": "Emergency Fund Strategy: ETF advantage for beginners is often:",
+        "options": [
+          "Guaranteed outperformance",
+          "No volatility",
+          "Diversification with low complexity"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l4_q5",
+        "question": "Emergency Fund Strategy: what helps during volatility?",
+        "options": [
+          "Predefined allocation bands",
+          "Panic selling",
+          "Doubling losses quickly"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l4_q6",
+        "question": "Emergency Fund Strategy: what supports long-term returns?",
+        "options": [
+          "Buying only after large spikes",
+          "Staying invested through cycles",
+          "Jumping in and out emotionally"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l4_q7",
+        "question": "Emergency Fund Strategy: a good monthly routine is:",
+        "options": [
+          "Contribute, review, rebalance if needed",
+          "Trade daily headlines",
+          "Rotate strategy weekly"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l4_q8",
+        "question": "In Emergency Fund Strategy, what habit improves consistency?",
+        "options": [
+          "Trade on impulse",
+          "Follow a written plan",
+          "Chase social media tips"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l4_q9",
+        "question": "For Emergency Fund Strategy, what lowers avoidable risk?",
+        "options": [
+          "Ignore position sizing",
+          "All-in on one position",
+          "Diversify exposure"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l4_q10",
+        "question": "When applying Emergency Fund Strategy, what should you review regularly?",
+        "options": [
+          "Only yesterday's price",
+          "Only best-performing asset",
+          "Allocation and goals"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l4_q11",
+        "question": "For Emergency Fund Strategy, a checklist before action should include:",
+        "options": [
+          "Risk, size, and rationale",
+          "Only momentum",
+          "Only community hype"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l4_q12",
+        "question": "Emergency Fund Strategy: what should be avoided?",
+        "options": [
+          "Risk budgeting",
+          "Overtrading",
+          "Periodic rebalancing"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l4_q13",
+        "question": "In Emergency Fund Strategy, concentration risk means:",
+        "options": [
+          "Owning many asset classes",
+          "Holding cash buffer",
+          "Too much in one asset"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l4_q14",
+        "question": "Emergency Fund Strategy: which behavior is healthiest?",
+        "options": [
+          "Small repeatable actions",
+          "Large emotional bets",
+          "Frequent revenge trades"
+        ],
+        "answer": "Small repeatable actions"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Long-Term Investing Mindset",
+    "body": "Compounding and consistency over market timing.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l5_q1",
+        "question": "For Long-Term Investing Mindset, what lowers avoidable risk?",
+        "options": [
+          "Diversify exposure",
+          "All-in on one position",
+          "Ignore position sizing"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l5_q2",
+        "question": "Long-Term Investing Mindset: what is a red flag?",
+        "options": [
+          "Long-term plan",
+          "No risk limits",
+          "Diversified exposure"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l5_q3",
+        "question": "For Long-Term Investing Mindset, good decision-making is based on:",
+        "options": [
+          "Rumors and FOMO",
+          "Rules and data",
+          "Random luck"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l5_q4",
+        "question": "Long-Term Investing Mindset: what supports long-term returns?",
+        "options": [
+          "Jumping in and out emotionally",
+          "Staying invested through cycles",
+          "Buying only after large spikes"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l5_q5",
+        "question": "Long-Term Investing Mindset: what is a healthy loss response?",
+        "options": [
+          "Review process and risk controls",
+          "Double position size immediately",
+          "Blame randomness only"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l5_q6",
+        "question": "Long-Term Investing Mindset: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After seeing one viral post",
+          "After one bad day"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l5_q7",
+        "question": "Long-Term Investing Mindset: ETF advantage for beginners is often:",
+        "options": [
+          "Guaranteed outperformance",
+          "No volatility",
+          "Diversification with low complexity"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l5_q8",
+        "question": "Long-Term Investing Mindset: for portfolio health, track:",
+        "options": [
+          "Only account balance",
+          "Allocation, risk, and progress",
+          "Only best-performing symbol"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l5_q9",
+        "question": "Long-Term Investing Mindset: what is a disciplined rebalance action?",
+        "options": [
+          "Ignore allocation drift",
+          "Trim overweight positions",
+          "Always add to hottest asset"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l5_q10",
+        "question": "Long-Term Investing Mindset: a good monthly routine is:",
+        "options": [
+          "Contribute, review, rebalance if needed",
+          "Rotate strategy weekly",
+          "Trade daily headlines"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l5_q11",
+        "question": "Long-Term Investing Mindset: compounding works best with:",
+        "options": [
+          "Constant strategy switching",
+          "Time and consistency",
+          "Frequent all-in bets"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l5_q12",
+        "question": "Long-Term Investing Mindset: risk tolerance should be linked to:",
+        "options": [
+          "Peer pressure",
+          "Goals and horizon",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l5_q13",
+        "question": "Long-Term Investing Mindset: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "100% of portfolio",
+          "Sized within total risk budget"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l5_q14",
+        "question": "Long-Term Investing Mindset: what's true about diversification?",
+        "options": [
+          "It guarantees profit",
+          "It eliminates all risk",
+          "It reduces concentration risk"
+        ],
+        "answer": "It reduces concentration risk"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Asset Allocation Basics",
+    "body": "Matching allocations to goals and risk tolerance.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l6_q1",
+        "question": "Asset Allocation Basics: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "Sized within total risk budget",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l6_q2",
+        "question": "Asset Allocation Basics: ETF advantage for beginners is often:",
+        "options": [
+          "Diversification with low complexity",
+          "No volatility",
+          "Guaranteed outperformance"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l6_q3",
+        "question": "Asset Allocation Basics: for portfolio health, track:",
+        "options": [
+          "Only best-performing symbol",
+          "Only account balance",
+          "Allocation, risk, and progress"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l6_q4",
+        "question": "Asset Allocation Basics: what helps avoid bias?",
+        "options": [
+          "Gut feeling only",
+          "Copying anonymous calls",
+          "Documented rules"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l6_q5",
+        "question": "When applying Asset Allocation Basics, what should you review regularly?",
+        "options": [
+          "Only best-performing asset",
+          "Only yesterday's price",
+          "Allocation and goals"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l6_q6",
+        "question": "Asset Allocation Basics: what is a practical beginner approach?",
+        "options": [
+          "Trade every headline",
+          "Use broad diversified exposure",
+          "Use max leverage"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l6_q7",
+        "question": "Asset Allocation Basics: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Peer pressure",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l6_q8",
+        "question": "Asset Allocation Basics: what supports long-term returns?",
+        "options": [
+          "Staying invested through cycles",
+          "Buying only after large spikes",
+          "Jumping in and out emotionally"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l6_q9",
+        "question": "Asset Allocation Basics: a good monthly routine is:",
+        "options": [
+          "Trade daily headlines",
+          "Rotate strategy weekly",
+          "Contribute, review, rebalance if needed"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l6_q10",
+        "question": "Asset Allocation Basics: market timing is usually:",
+        "options": [
+          "Hard to do consistently",
+          "Easy with one indicator",
+          "Risk-free"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l6_q11",
+        "question": "For Asset Allocation Basics, which metric is useful?",
+        "options": [
+          "Drawdown and diversification",
+          "Only daily gains",
+          "Only social sentiment"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l6_q12",
+        "question": "Asset Allocation Basics: which statement is correct?",
+        "options": [
+          "Risk can be eliminated entirely",
+          "Risk can be managed, not removed",
+          "Risk does not matter"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l6_q13",
+        "question": "In Asset Allocation Basics, what habit improves consistency?",
+        "options": [
+          "Follow a written plan",
+          "Trade on impulse",
+          "Chase social media tips"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l6_q14",
+        "question": "Asset Allocation Basics: what is a healthy loss response?",
+        "options": [
+          "Review process and risk controls",
+          "Blame randomness only",
+          "Double position size immediately"
+        ],
+        "answer": "Review process and risk controls"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Rebalancing Discipline",
+    "body": "When and why to rebalance a portfolio.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l7_q1",
+        "question": "Rebalancing Discipline: a good monthly routine is:",
+        "options": [
+          "Rotate strategy weekly",
+          "Trade daily headlines",
+          "Contribute, review, rebalance if needed"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l7_q2",
+        "question": "For Rebalancing Discipline, good decision-making is based on:",
+        "options": [
+          "Rumors and FOMO",
+          "Random luck",
+          "Rules and data"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l7_q3",
+        "question": "Rebalancing Discipline: ETF advantage for beginners is often:",
+        "options": [
+          "Guaranteed outperformance",
+          "No volatility",
+          "Diversification with low complexity"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l7_q4",
+        "question": "Rebalancing Discipline: crypto exposure should generally be:",
+        "options": [
+          "Sized within total risk budget",
+          "Untethered to risk plan",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l7_q5",
+        "question": "For Rebalancing Discipline, which metric is useful?",
+        "options": [
+          "Only daily gains",
+          "Only social sentiment",
+          "Drawdown and diversification"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l7_q6",
+        "question": "Rebalancing Discipline: what helps avoid bias?",
+        "options": [
+          "Documented rules",
+          "Copying anonymous calls",
+          "Gut feeling only"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l7_q7",
+        "question": "Rebalancing Discipline: what supports long-term returns?",
+        "options": [
+          "Buying only after large spikes",
+          "Jumping in and out emotionally",
+          "Staying invested through cycles"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l7_q8",
+        "question": "Rebalancing Discipline: why keep an emergency fund?",
+        "options": [
+          "Guarantee profits",
+          "Increase FOMO buying",
+          "Avoid forced selling"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l7_q9",
+        "question": "Rebalancing Discipline: what is position sizing for?",
+        "options": [
+          "Ignoring portfolio context",
+          "Limiting single-trade damage",
+          "Maximizing emotional comfort"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l7_q10",
+        "question": "Rebalancing Discipline: which behavior is healthiest?",
+        "options": [
+          "Large emotional bets",
+          "Frequent revenge trades",
+          "Small repeatable actions"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l7_q11",
+        "question": "Rebalancing Discipline: what helps during volatility?",
+        "options": [
+          "Panic selling",
+          "Doubling losses quickly",
+          "Predefined allocation bands"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l7_q12",
+        "question": "For Rebalancing Discipline, what lowers avoidable risk?",
+        "options": [
+          "All-in on one position",
+          "Ignore position sizing",
+          "Diversify exposure"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l7_q13",
+        "question": "Rebalancing Discipline: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l7_q14",
+        "question": "Rebalancing Discipline: when should you change strategy?",
+        "options": [
+          "After one bad day",
+          "After seeing one viral post",
+          "When goals/constraints change"
+        ],
+        "answer": "When goals/constraints change"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Behavioral Finance Traps",
+    "body": "Avoiding emotional mistakes during market moves.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l8_q1",
+        "question": "Behavioral Finance Traps: what is a practical beginner approach?",
+        "options": [
+          "Trade every headline",
+          "Use broad diversified exposure",
+          "Use max leverage"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l8_q2",
+        "question": "Behavioral Finance Traps: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "100% of portfolio",
+          "Sized within total risk budget"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l8_q3",
+        "question": "Behavioral Finance Traps: what's true about diversification?",
+        "options": [
+          "It eliminates all risk",
+          "It guarantees profit",
+          "It reduces concentration risk"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l8_q4",
+        "question": "Behavioral Finance Traps: market timing is usually:",
+        "options": [
+          "Easy with one indicator",
+          "Risk-free",
+          "Hard to do consistently"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l8_q5",
+        "question": "Behavioral Finance Traps: when should you change strategy?",
+        "options": [
+          "After seeing one viral post",
+          "When goals/constraints change",
+          "After one bad day"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l8_q6",
+        "question": "Behavioral Finance Traps: what should be avoided?",
+        "options": [
+          "Overtrading",
+          "Periodic rebalancing",
+          "Risk budgeting"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l8_q7",
+        "question": "Behavioral Finance Traps: which behavior is healthiest?",
+        "options": [
+          "Frequent revenge trades",
+          "Large emotional bets",
+          "Small repeatable actions"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l8_q8",
+        "question": "When applying Behavioral Finance Traps, what should you review regularly?",
+        "options": [
+          "Only best-performing asset",
+          "Only yesterday's price",
+          "Allocation and goals"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l8_q9",
+        "question": "In Behavioral Finance Traps, concentration risk means:",
+        "options": [
+          "Too much in one asset",
+          "Owning many asset classes",
+          "Holding cash buffer"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l8_q10",
+        "question": "For Behavioral Finance Traps, a checklist before action should include:",
+        "options": [
+          "Only community hype",
+          "Risk, size, and rationale",
+          "Only momentum"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l8_q11",
+        "question": "Behavioral Finance Traps: what helps avoid bias?",
+        "options": [
+          "Documented rules",
+          "Copying anonymous calls",
+          "Gut feeling only"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l8_q12",
+        "question": "Behavioral Finance Traps: what is a red flag?",
+        "options": [
+          "No risk limits",
+          "Long-term plan",
+          "Diversified exposure"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l8_q13",
+        "question": "Behavioral Finance Traps: a good monthly routine is:",
+        "options": [
+          "Rotate strategy weekly",
+          "Contribute, review, rebalance if needed",
+          "Trade daily headlines"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l8_q14",
+        "question": "Behavioral Finance Traps: risk tolerance should be linked to:",
+        "options": [
+          "Peer pressure",
+          "Goals and horizon",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Crypto Risk Awareness",
+    "body": "Managing volatility and concentration in crypto.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l9_q1",
+        "question": "Crypto Risk Awareness: what's true about diversification?",
+        "options": [
+          "It eliminates all risk",
+          "It guarantees profit",
+          "It reduces concentration risk"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l9_q2",
+        "question": "Crypto Risk Awareness: what is a disciplined rebalance action?",
+        "options": [
+          "Trim overweight positions",
+          "Ignore allocation drift",
+          "Always add to hottest asset"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l9_q3",
+        "question": "Crypto Risk Awareness: risk tolerance should be linked to:",
+        "options": [
+          "Daily news feed",
+          "Peer pressure",
+          "Goals and horizon"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l9_q4",
+        "question": "Crypto Risk Awareness: market timing is usually:",
+        "options": [
+          "Hard to do consistently",
+          "Risk-free",
+          "Easy with one indicator"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l9_q5",
+        "question": "For Crypto Risk Awareness, what lowers avoidable risk?",
+        "options": [
+          "Ignore position sizing",
+          "All-in on one position",
+          "Diversify exposure"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l9_q6",
+        "question": "For Crypto Risk Awareness, a checklist before action should include:",
+        "options": [
+          "Only community hype",
+          "Risk, size, and rationale",
+          "Only momentum"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l9_q7",
+        "question": "In Crypto Risk Awareness, concentration risk means:",
+        "options": [
+          "Holding cash buffer",
+          "Too much in one asset",
+          "Owning many asset classes"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l9_q8",
+        "question": "For Crypto Risk Awareness, good decision-making is based on:",
+        "options": [
+          "Rules and data",
+          "Random luck",
+          "Rumors and FOMO"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l9_q9",
+        "question": "Crypto Risk Awareness: what helps during volatility?",
+        "options": [
+          "Panic selling",
+          "Predefined allocation bands",
+          "Doubling losses quickly"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l9_q10",
+        "question": "Crypto Risk Awareness: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "Sized within total risk budget",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l9_q11",
+        "question": "Crypto Risk Awareness: which behavior is healthiest?",
+        "options": [
+          "Large emotional bets",
+          "Small repeatable actions",
+          "Frequent revenge trades"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l9_q12",
+        "question": "Crypto Risk Awareness: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be managed, not removed",
+          "Risk can be eliminated entirely"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l9_q13",
+        "question": "In Crypto Risk Awareness, what habit improves consistency?",
+        "options": [
+          "Chase social media tips",
+          "Trade on impulse",
+          "Follow a written plan"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l9_q14",
+        "question": "Crypto Risk Awareness: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Stock Selection Basics",
+    "body": "Evaluating businesses and avoiding hype bias.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l10_q1",
+        "question": "Stock Selection Basics: what is position sizing for?",
+        "options": [
+          "Limiting single-trade damage",
+          "Ignoring portfolio context",
+          "Maximizing emotional comfort"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l10_q2",
+        "question": "For Stock Selection Basics, good decision-making is based on:",
+        "options": [
+          "Random luck",
+          "Rumors and FOMO",
+          "Rules and data"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l10_q3",
+        "question": "Stock Selection Basics: risk tolerance should be linked to:",
+        "options": [
+          "Peer pressure",
+          "Daily news feed",
+          "Goals and horizon"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l10_q4",
+        "question": "When applying Stock Selection Basics, what should you review regularly?",
+        "options": [
+          "Allocation and goals",
+          "Only yesterday's price",
+          "Only best-performing asset"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l10_q5",
+        "question": "Stock Selection Basics: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l10_q6",
+        "question": "Stock Selection Basics: what's true about diversification?",
+        "options": [
+          "It eliminates all risk",
+          "It guarantees profit",
+          "It reduces concentration risk"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l10_q7",
+        "question": "For Stock Selection Basics, which metric is useful?",
+        "options": [
+          "Only daily gains",
+          "Drawdown and diversification",
+          "Only social sentiment"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l10_q8",
+        "question": "In Stock Selection Basics, concentration risk means:",
+        "options": [
+          "Too much in one asset",
+          "Owning many asset classes",
+          "Holding cash buffer"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l10_q9",
+        "question": "Stock Selection Basics: what is a red flag?",
+        "options": [
+          "Diversified exposure",
+          "No risk limits",
+          "Long-term plan"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l10_q10",
+        "question": "Stock Selection Basics: what is a healthy loss response?",
+        "options": [
+          "Double position size immediately",
+          "Blame randomness only",
+          "Review process and risk controls"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l10_q11",
+        "question": "Stock Selection Basics: compounding works best with:",
+        "options": [
+          "Constant strategy switching",
+          "Time and consistency",
+          "Frequent all-in bets"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l10_q12",
+        "question": "Stock Selection Basics: what is a disciplined rebalance action?",
+        "options": [
+          "Ignore allocation drift",
+          "Trim overweight positions",
+          "Always add to hottest asset"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l10_q13",
+        "question": "Stock Selection Basics: ETF advantage for beginners is often:",
+        "options": [
+          "No volatility",
+          "Diversification with low complexity",
+          "Guaranteed outperformance"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l10_q14",
+        "question": "Stock Selection Basics: market timing is usually:",
+        "options": [
+          "Risk-free",
+          "Easy with one indicator",
+          "Hard to do consistently"
+        ],
+        "answer": "Hard to do consistently"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "ETF and Index Investing",
+    "body": "Low-cost broad exposure for beginners.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l11_q1",
+        "question": "ETF and Index Investing: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Daily news feed",
+          "Peer pressure"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l11_q2",
+        "question": "When applying ETF and Index Investing, what should you review regularly?",
+        "options": [
+          "Allocation and goals",
+          "Only best-performing asset",
+          "Only yesterday's price"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l11_q3",
+        "question": "ETF and Index Investing: why keep an emergency fund?",
+        "options": [
+          "Guarantee profits",
+          "Avoid forced selling",
+          "Increase FOMO buying"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l11_q4",
+        "question": "For ETF and Index Investing, a checklist before action should include:",
+        "options": [
+          "Risk, size, and rationale",
+          "Only community hype",
+          "Only momentum"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l11_q5",
+        "question": "For ETF and Index Investing, which metric is useful?",
+        "options": [
+          "Drawdown and diversification",
+          "Only daily gains",
+          "Only social sentiment"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l11_q6",
+        "question": "ETF and Index Investing: a good monthly routine is:",
+        "options": [
+          "Contribute, review, rebalance if needed",
+          "Trade daily headlines",
+          "Rotate strategy weekly"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l11_q7",
+        "question": "ETF and Index Investing: what helps avoid bias?",
+        "options": [
+          "Gut feeling only",
+          "Documented rules",
+          "Copying anonymous calls"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l11_q8",
+        "question": "ETF and Index Investing: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l11_q9",
+        "question": "ETF and Index Investing: compounding works best with:",
+        "options": [
+          "Frequent all-in bets",
+          "Time and consistency",
+          "Constant strategy switching"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l11_q10",
+        "question": "In ETF and Index Investing, concentration risk means:",
+        "options": [
+          "Holding cash buffer",
+          "Owning many asset classes",
+          "Too much in one asset"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l11_q11",
+        "question": "ETF and Index Investing: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After seeing one viral post",
+          "After one bad day"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l11_q12",
+        "question": "ETF and Index Investing: what supports long-term returns?",
+        "options": [
+          "Staying invested through cycles",
+          "Buying only after large spikes",
+          "Jumping in and out emotionally"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l11_q13",
+        "question": "In ETF and Index Investing, what habit improves consistency?",
+        "options": [
+          "Chase social media tips",
+          "Follow a written plan",
+          "Trade on impulse"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l11_q14",
+        "question": "ETF and Index Investing: which behavior is healthiest?",
+        "options": [
+          "Small repeatable actions",
+          "Frequent revenge trades",
+          "Large emotional bets"
+        ],
+        "answer": "Small repeatable actions"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Inflation and Purchasing Power",
+    "body": "Protecting long-term value of savings.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l12_q1",
+        "question": "Inflation and Purchasing Power: what is a red flag?",
+        "options": [
+          "No risk limits",
+          "Diversified exposure",
+          "Long-term plan"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l12_q2",
+        "question": "For Inflation and Purchasing Power, a checklist before action should include:",
+        "options": [
+          "Risk, size, and rationale",
+          "Only community hype",
+          "Only momentum"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l12_q3",
+        "question": "Inflation and Purchasing Power: what is position sizing for?",
+        "options": [
+          "Limiting single-trade damage",
+          "Maximizing emotional comfort",
+          "Ignoring portfolio context"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l12_q4",
+        "question": "Inflation and Purchasing Power: ETF advantage for beginners is often:",
+        "options": [
+          "Guaranteed outperformance",
+          "Diversification with low complexity",
+          "No volatility"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l12_q5",
+        "question": "Inflation and Purchasing Power: what helps during volatility?",
+        "options": [
+          "Predefined allocation bands",
+          "Doubling losses quickly",
+          "Panic selling"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l12_q6",
+        "question": "Inflation and Purchasing Power: why keep an emergency fund?",
+        "options": [
+          "Avoid forced selling",
+          "Increase FOMO buying",
+          "Guarantee profits"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l12_q7",
+        "question": "In Inflation and Purchasing Power, concentration risk means:",
+        "options": [
+          "Holding cash buffer",
+          "Owning many asset classes",
+          "Too much in one asset"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l12_q8",
+        "question": "Inflation and Purchasing Power: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be eliminated entirely",
+          "Risk can be managed, not removed"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l12_q9",
+        "question": "Inflation and Purchasing Power: what should be avoided?",
+        "options": [
+          "Overtrading",
+          "Periodic rebalancing",
+          "Risk budgeting"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l12_q10",
+        "question": "Inflation and Purchasing Power: which behavior is healthiest?",
+        "options": [
+          "Small repeatable actions",
+          "Frequent revenge trades",
+          "Large emotional bets"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l12_q11",
+        "question": "Inflation and Purchasing Power: what is a practical beginner approach?",
+        "options": [
+          "Use broad diversified exposure",
+          "Use max leverage",
+          "Trade every headline"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l12_q12",
+        "question": "Inflation and Purchasing Power: risk tolerance should be linked to:",
+        "options": [
+          "Daily news feed",
+          "Goals and horizon",
+          "Peer pressure"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l12_q13",
+        "question": "For Inflation and Purchasing Power, good decision-making is based on:",
+        "options": [
+          "Rumors and FOMO",
+          "Rules and data",
+          "Random luck"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l12_q14",
+        "question": "Inflation and Purchasing Power: what is a healthy loss response?",
+        "options": [
+          "Review process and risk controls",
+          "Double position size immediately",
+          "Blame randomness only"
+        ],
+        "answer": "Review process and risk controls"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Tax-Aware Investing",
+    "body": "Tax efficiency and holding-period decisions.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l13_q1",
+        "question": "Tax-Aware Investing: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be managed, not removed",
+          "Risk can be eliminated entirely"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l13_q2",
+        "question": "Tax-Aware Investing: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l13_q3",
+        "question": "Tax-Aware Investing: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Peer pressure",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l13_q4",
+        "question": "Tax-Aware Investing: what is a healthy loss response?",
+        "options": [
+          "Double position size immediately",
+          "Blame randomness only",
+          "Review process and risk controls"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l13_q5",
+        "question": "Tax-Aware Investing: what is position sizing for?",
+        "options": [
+          "Limiting single-trade damage",
+          "Ignoring portfolio context",
+          "Maximizing emotional comfort"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l13_q6",
+        "question": "Tax-Aware Investing: what is a practical beginner approach?",
+        "options": [
+          "Use max leverage",
+          "Trade every headline",
+          "Use broad diversified exposure"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l13_q7",
+        "question": "When applying Tax-Aware Investing, what should you review regularly?",
+        "options": [
+          "Only yesterday's price",
+          "Only best-performing asset",
+          "Allocation and goals"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l13_q8",
+        "question": "Tax-Aware Investing: what helps during volatility?",
+        "options": [
+          "Doubling losses quickly",
+          "Panic selling",
+          "Predefined allocation bands"
+        ],
+        "answer": "Predefined allocation bands"
+      },
+      {
+        "id": "l13_q9",
+        "question": "Tax-Aware Investing: what's true about diversification?",
+        "options": [
+          "It guarantees profit",
+          "It reduces concentration risk",
+          "It eliminates all risk"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l13_q10",
+        "question": "For Tax-Aware Investing, what lowers avoidable risk?",
+        "options": [
+          "All-in on one position",
+          "Diversify exposure",
+          "Ignore position sizing"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l13_q11",
+        "question": "In Tax-Aware Investing, what habit improves consistency?",
+        "options": [
+          "Trade on impulse",
+          "Chase social media tips",
+          "Follow a written plan"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l13_q12",
+        "question": "Tax-Aware Investing: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After seeing one viral post",
+          "After one bad day"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l13_q13",
+        "question": "Tax-Aware Investing: ETF advantage for beginners is often:",
+        "options": [
+          "Diversification with low complexity",
+          "No volatility",
+          "Guaranteed outperformance"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l13_q14",
+        "question": "Tax-Aware Investing: what supports long-term returns?",
+        "options": [
+          "Buying only after large spikes",
+          "Jumping in and out emotionally",
+          "Staying invested through cycles"
+        ],
+        "answer": "Staying invested through cycles"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Position Sizing",
+    "body": "Set exposure limits per trade and per asset.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l14_q1",
+        "question": "Position Sizing: what is a disciplined rebalance action?",
+        "options": [
+          "Ignore allocation drift",
+          "Trim overweight positions",
+          "Always add to hottest asset"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l14_q2",
+        "question": "For Position Sizing, good decision-making is based on:",
+        "options": [
+          "Rumors and FOMO",
+          "Random luck",
+          "Rules and data"
+        ],
+        "answer": "Rules and data"
+      },
+      {
+        "id": "l14_q3",
+        "question": "For Position Sizing, a checklist before action should include:",
+        "options": [
+          "Only community hype",
+          "Risk, size, and rationale",
+          "Only momentum"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l14_q4",
+        "question": "For Position Sizing, what lowers avoidable risk?",
+        "options": [
+          "Diversify exposure",
+          "All-in on one position",
+          "Ignore position sizing"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l14_q5",
+        "question": "Position Sizing: a good monthly routine is:",
+        "options": [
+          "Rotate strategy weekly",
+          "Trade daily headlines",
+          "Contribute, review, rebalance if needed"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l14_q6",
+        "question": "Position Sizing: what is position sizing for?",
+        "options": [
+          "Ignoring portfolio context",
+          "Limiting single-trade damage",
+          "Maximizing emotional comfort"
+        ],
+        "answer": "Limiting single-trade damage"
+      },
+      {
+        "id": "l14_q7",
+        "question": "Position Sizing: what supports long-term returns?",
+        "options": [
+          "Jumping in and out emotionally",
+          "Buying only after large spikes",
+          "Staying invested through cycles"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l14_q8",
+        "question": "Position Sizing: why keep an emergency fund?",
+        "options": [
+          "Increase FOMO buying",
+          "Avoid forced selling",
+          "Guarantee profits"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l14_q9",
+        "question": "Position Sizing: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After one bad day",
+          "After seeing one viral post"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l14_q10",
+        "question": "Position Sizing: market timing is usually:",
+        "options": [
+          "Hard to do consistently",
+          "Easy with one indicator",
+          "Risk-free"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l14_q11",
+        "question": "Position Sizing: risk tolerance should be linked to:",
+        "options": [
+          "Peer pressure",
+          "Goals and horizon",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l14_q12",
+        "question": "When applying Position Sizing, what should you review regularly?",
+        "options": [
+          "Only best-performing asset",
+          "Allocation and goals",
+          "Only yesterday's price"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l14_q13",
+        "question": "Position Sizing: crypto exposure should generally be:",
+        "options": [
+          "Sized within total risk budget",
+          "Untethered to risk plan",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l14_q14",
+        "question": "Position Sizing: ETF advantage for beginners is often:",
+        "options": [
+          "Diversification with low complexity",
+          "Guaranteed outperformance",
+          "No volatility"
+        ],
+        "answer": "Diversification with low complexity"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Portfolio Health Review",
+    "body": "Simple cadence for portfolio checkups.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l15_q1",
+        "question": "Portfolio Health Review: market timing is usually:",
+        "options": [
+          "Risk-free",
+          "Hard to do consistently",
+          "Easy with one indicator"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l15_q2",
+        "question": "For Portfolio Health Review, what lowers avoidable risk?",
+        "options": [
+          "Ignore position sizing",
+          "All-in on one position",
+          "Diversify exposure"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l15_q3",
+        "question": "Portfolio Health Review: what should be avoided?",
+        "options": [
+          "Periodic rebalancing",
+          "Risk budgeting",
+          "Overtrading"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l15_q4",
+        "question": "Portfolio Health Review: a good monthly routine is:",
+        "options": [
+          "Rotate strategy weekly",
+          "Contribute, review, rebalance if needed",
+          "Trade daily headlines"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l15_q5",
+        "question": "Portfolio Health Review: compounding works best with:",
+        "options": [
+          "Constant strategy switching",
+          "Frequent all-in bets",
+          "Time and consistency"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l15_q6",
+        "question": "Portfolio Health Review: what is a healthy loss response?",
+        "options": [
+          "Review process and risk controls",
+          "Blame randomness only",
+          "Double position size immediately"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l15_q7",
+        "question": "Portfolio Health Review: what supports long-term returns?",
+        "options": [
+          "Buying only after large spikes",
+          "Jumping in and out emotionally",
+          "Staying invested through cycles"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l15_q8",
+        "question": "Portfolio Health Review: which behavior is healthiest?",
+        "options": [
+          "Large emotional bets",
+          "Frequent revenge trades",
+          "Small repeatable actions"
+        ],
+        "answer": "Small repeatable actions"
+      },
+      {
+        "id": "l15_q9",
+        "question": "Portfolio Health Review: what is a red flag?",
+        "options": [
+          "Long-term plan",
+          "Diversified exposure",
+          "No risk limits"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l15_q10",
+        "question": "Portfolio Health Review: what is a practical beginner approach?",
+        "options": [
+          "Trade every headline",
+          "Use broad diversified exposure",
+          "Use max leverage"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l15_q11",
+        "question": "In Portfolio Health Review, concentration risk means:",
+        "options": [
+          "Too much in one asset",
+          "Holding cash buffer",
+          "Owning many asset classes"
+        ],
+        "answer": "Too much in one asset"
+      },
+      {
+        "id": "l15_q12",
+        "question": "In Portfolio Health Review, what habit improves consistency?",
+        "options": [
+          "Trade on impulse",
+          "Follow a written plan",
+          "Chase social media tips"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l15_q13",
+        "question": "Portfolio Health Review: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Daily news feed",
+          "Peer pressure"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l15_q14",
+        "question": "Portfolio Health Review: what's true about diversification?",
+        "options": [
+          "It guarantees profit",
+          "It reduces concentration risk",
+          "It eliminates all risk"
+        ],
+        "answer": "It reduces concentration risk"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Debt vs Investing Tradeoffs",
+    "body": "Balancing high-interest debt and investing.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l16_q1",
+        "question": "Debt vs Investing Tradeoffs: what is a healthy loss response?",
+        "options": [
+          "Double position size immediately",
+          "Review process and risk controls",
+          "Blame randomness only"
+        ],
+        "answer": "Review process and risk controls"
+      },
+      {
+        "id": "l16_q2",
+        "question": "Debt vs Investing Tradeoffs: what helps avoid bias?",
+        "options": [
+          "Gut feeling only",
+          "Copying anonymous calls",
+          "Documented rules"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l16_q3",
+        "question": "Debt vs Investing Tradeoffs: which statement is correct?",
+        "options": [
+          "Risk does not matter",
+          "Risk can be managed, not removed",
+          "Risk can be eliminated entirely"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l16_q4",
+        "question": "For Debt vs Investing Tradeoffs, what lowers avoidable risk?",
+        "options": [
+          "Diversify exposure",
+          "Ignore position sizing",
+          "All-in on one position"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l16_q5",
+        "question": "Debt vs Investing Tradeoffs: what supports long-term returns?",
+        "options": [
+          "Staying invested through cycles",
+          "Buying only after large spikes",
+          "Jumping in and out emotionally"
+        ],
+        "answer": "Staying invested through cycles"
+      },
+      {
+        "id": "l16_q6",
+        "question": "When applying Debt vs Investing Tradeoffs, what should you review regularly?",
+        "options": [
+          "Only best-performing asset",
+          "Allocation and goals",
+          "Only yesterday's price"
+        ],
+        "answer": "Allocation and goals"
+      },
+      {
+        "id": "l16_q7",
+        "question": "Debt vs Investing Tradeoffs: what is a disciplined rebalance action?",
+        "options": [
+          "Always add to hottest asset",
+          "Trim overweight positions",
+          "Ignore allocation drift"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l16_q8",
+        "question": "Debt vs Investing Tradeoffs: why keep an emergency fund?",
+        "options": [
+          "Avoid forced selling",
+          "Guarantee profits",
+          "Increase FOMO buying"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l16_q9",
+        "question": "Debt vs Investing Tradeoffs: for portfolio health, track:",
+        "options": [
+          "Only account balance",
+          "Only best-performing symbol",
+          "Allocation, risk, and progress"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l16_q10",
+        "question": "For Debt vs Investing Tradeoffs, which metric is useful?",
+        "options": [
+          "Only social sentiment",
+          "Only daily gains",
+          "Drawdown and diversification"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l16_q11",
+        "question": "For Debt vs Investing Tradeoffs, a checklist before action should include:",
+        "options": [
+          "Only momentum",
+          "Risk, size, and rationale",
+          "Only community hype"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l16_q12",
+        "question": "Debt vs Investing Tradeoffs: what is a red flag?",
+        "options": [
+          "Diversified exposure",
+          "Long-term plan",
+          "No risk limits"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l16_q13",
+        "question": "Debt vs Investing Tradeoffs: what should be avoided?",
+        "options": [
+          "Risk budgeting",
+          "Overtrading",
+          "Periodic rebalancing"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l16_q14",
+        "question": "Debt vs Investing Tradeoffs: what is a practical beginner approach?",
+        "options": [
+          "Use max leverage",
+          "Use broad diversified exposure",
+          "Trade every headline"
+        ],
+        "answer": "Use broad diversified exposure"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Goal-Based Investing",
+    "body": "Map accounts and allocations to real goals.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l17_q1",
+        "question": "For Goal-Based Investing, which metric is useful?",
+        "options": [
+          "Only social sentiment",
+          "Only daily gains",
+          "Drawdown and diversification"
+        ],
+        "answer": "Drawdown and diversification"
+      },
+      {
+        "id": "l17_q2",
+        "question": "Goal-Based Investing: which statement is correct?",
+        "options": [
+          "Risk can be eliminated entirely",
+          "Risk can be managed, not removed",
+          "Risk does not matter"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l17_q3",
+        "question": "Goal-Based Investing: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "Sized within total risk budget",
+          "100% of portfolio"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l17_q4",
+        "question": "Goal-Based Investing: what is a practical beginner approach?",
+        "options": [
+          "Trade every headline",
+          "Use max leverage",
+          "Use broad diversified exposure"
+        ],
+        "answer": "Use broad diversified exposure"
+      },
+      {
+        "id": "l17_q5",
+        "question": "For Goal-Based Investing, what lowers avoidable risk?",
+        "options": [
+          "Ignore position sizing",
+          "All-in on one position",
+          "Diversify exposure"
+        ],
+        "answer": "Diversify exposure"
+      },
+      {
+        "id": "l17_q6",
+        "question": "Goal-Based Investing: for portfolio health, track:",
+        "options": [
+          "Allocation, risk, and progress",
+          "Only account balance",
+          "Only best-performing symbol"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l17_q7",
+        "question": "Goal-Based Investing: when should you change strategy?",
+        "options": [
+          "When goals/constraints change",
+          "After seeing one viral post",
+          "After one bad day"
+        ],
+        "answer": "When goals/constraints change"
+      },
+      {
+        "id": "l17_q8",
+        "question": "Goal-Based Investing: what's true about diversification?",
+        "options": [
+          "It reduces concentration risk",
+          "It eliminates all risk",
+          "It guarantees profit"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l17_q9",
+        "question": "Goal-Based Investing: why keep an emergency fund?",
+        "options": [
+          "Avoid forced selling",
+          "Increase FOMO buying",
+          "Guarantee profits"
+        ],
+        "answer": "Avoid forced selling"
+      },
+      {
+        "id": "l17_q10",
+        "question": "Goal-Based Investing: what is a red flag?",
+        "options": [
+          "Long-term plan",
+          "No risk limits",
+          "Diversified exposure"
+        ],
+        "answer": "No risk limits"
+      },
+      {
+        "id": "l17_q11",
+        "question": "Goal-Based Investing: market timing is usually:",
+        "options": [
+          "Easy with one indicator",
+          "Hard to do consistently",
+          "Risk-free"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l17_q12",
+        "question": "In Goal-Based Investing, what habit improves consistency?",
+        "options": [
+          "Trade on impulse",
+          "Chase social media tips",
+          "Follow a written plan"
+        ],
+        "answer": "Follow a written plan"
+      },
+      {
+        "id": "l17_q13",
+        "question": "For Goal-Based Investing, a checklist before action should include:",
+        "options": [
+          "Only momentum",
+          "Risk, size, and rationale",
+          "Only community hype"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l17_q14",
+        "question": "When applying Goal-Based Investing, what should you review regularly?",
+        "options": [
+          "Only yesterday's price",
+          "Allocation and goals",
+          "Only best-performing asset"
+        ],
+        "answer": "Allocation and goals"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Market Cycles",
+    "body": "How bull and bear cycles affect decision quality.",
+    "reward_xp": 40,
+    "reward_coins": 50,
+    "questions": [
+      {
+        "id": "l18_q1",
+        "question": "Market Cycles: which statement is correct?",
+        "options": [
+          "Risk can be eliminated entirely",
+          "Risk can be managed, not removed",
+          "Risk does not matter"
+        ],
+        "answer": "Risk can be managed, not removed"
+      },
+      {
+        "id": "l18_q2",
+        "question": "Market Cycles: what is a disciplined rebalance action?",
+        "options": [
+          "Trim overweight positions",
+          "Ignore allocation drift",
+          "Always add to hottest asset"
+        ],
+        "answer": "Trim overweight positions"
+      },
+      {
+        "id": "l18_q3",
+        "question": "Market Cycles: what should be avoided?",
+        "options": [
+          "Overtrading",
+          "Risk budgeting",
+          "Periodic rebalancing"
+        ],
+        "answer": "Overtrading"
+      },
+      {
+        "id": "l18_q4",
+        "question": "Market Cycles: compounding works best with:",
+        "options": [
+          "Time and consistency",
+          "Frequent all-in bets",
+          "Constant strategy switching"
+        ],
+        "answer": "Time and consistency"
+      },
+      {
+        "id": "l18_q5",
+        "question": "Market Cycles: a good monthly routine is:",
+        "options": [
+          "Contribute, review, rebalance if needed",
+          "Trade daily headlines",
+          "Rotate strategy weekly"
+        ],
+        "answer": "Contribute, review, rebalance if needed"
+      },
+      {
+        "id": "l18_q6",
+        "question": "Market Cycles: what helps avoid bias?",
+        "options": [
+          "Gut feeling only",
+          "Documented rules",
+          "Copying anonymous calls"
+        ],
+        "answer": "Documented rules"
+      },
+      {
+        "id": "l18_q7",
+        "question": "Market Cycles: market timing is usually:",
+        "options": [
+          "Hard to do consistently",
+          "Risk-free",
+          "Easy with one indicator"
+        ],
+        "answer": "Hard to do consistently"
+      },
+      {
+        "id": "l18_q8",
+        "question": "Market Cycles: risk tolerance should be linked to:",
+        "options": [
+          "Goals and horizon",
+          "Peer pressure",
+          "Daily news feed"
+        ],
+        "answer": "Goals and horizon"
+      },
+      {
+        "id": "l18_q9",
+        "question": "For Market Cycles, a checklist before action should include:",
+        "options": [
+          "Only momentum",
+          "Risk, size, and rationale",
+          "Only community hype"
+        ],
+        "answer": "Risk, size, and rationale"
+      },
+      {
+        "id": "l18_q10",
+        "question": "Market Cycles: crypto exposure should generally be:",
+        "options": [
+          "Untethered to risk plan",
+          "100% of portfolio",
+          "Sized within total risk budget"
+        ],
+        "answer": "Sized within total risk budget"
+      },
+      {
+        "id": "l18_q11",
+        "question": "Market Cycles: what's true about diversification?",
+        "options": [
+          "It guarantees profit",
+          "It reduces concentration risk",
+          "It eliminates all risk"
+        ],
+        "answer": "It reduces concentration risk"
+      },
+      {
+        "id": "l18_q12",
+        "question": "Market Cycles: for portfolio health, track:",
+        "options": [
+          "Allocation, risk, and progress",
+          "Only account balance",
+          "Only best-performing symbol"
+        ],
+        "answer": "Allocation, risk, and progress"
+      },
+      {
+        "id": "l18_q13",
+        "question": "Market Cycles: ETF advantage for beginners is often:",
+        "options": [
+          "No volatility",
+          "Guaranteed outperformance",
+          "Diversification with low complexity"
+        ],
+        "answer": "Diversification with low complexity"
+      },
+      {
+        "id": "l18_q14",
+        "question": "In Market Cycles, what habit improves consistency?",
+        "options": [
+          "Chase social media tips",
+          "Follow a written plan",
+          "Trade on impulse"
+        ],
+        "answer": "Follow a written plan"
+      }
+    ]
+  }
+]

@@ -1,4 +1,7 @@
-from .models import Asset, Lesson, ShopItem
+import json
+from pathlib import Path
+
+from .models import Asset, Lesson, LessonQuestion, ShopItem
 
 
 ASSETS = [
@@ -24,47 +27,6 @@ ASSETS = [
     ("DOGE", "Dogecoin", "crypto", "Crypto", "high", 0.18),
 ]
 
-LESSONS = [
-    {
-        "id": 1,
-        "title": "Diversification Basics",
-        "body": "Diversification means spreading investments across assets to reduce concentration risk.",
-        "quiz_json": [
-            {
-                "id": "q1",
-                "question": "What does diversification reduce?",
-                "options": ["Concentration risk", "All market risk", "Taxes"],
-                "answer": "Concentration risk",
-            },
-            {
-                "id": "q2",
-                "question": "Is diversification guaranteed profit?",
-                "options": ["Yes", "No"],
-                "answer": "No",
-            },
-        ],
-    },
-    {
-        "id": 2,
-        "title": "Risk vs Reward",
-        "body": "Higher potential return typically comes with higher volatility and drawdown risk.",
-        "quiz_json": [
-            {
-                "id": "q1",
-                "question": "Higher return potential usually means:",
-                "options": ["Lower risk", "Higher risk"],
-                "answer": "Higher risk",
-            },
-            {
-                "id": "q2",
-                "question": "A healthy habit is to:",
-                "options": ["Bet all on one asset", "Review allocation regularly"],
-                "answer": "Review allocation regularly",
-            },
-        ],
-    },
-]
-
 SHOP_ITEMS = [
     (1, "accessory", "hat", "Leaf Cap", 60, {"image_url": "/shop/leaf-cap.svg", "pet_layer": "hat", "pet_asset": "/shop/leaf-cap.svg"}),
     (2, "accessory", "hat", "Space Helmet", 100, {"image_url": "/shop/space-helmet.svg", "pet_layer": "hat", "pet_asset": "/shop/space-helmet.svg"}),
@@ -78,6 +40,17 @@ SHOP_ITEMS = [
     (10, "habitat", "background", "City Loft", 250, {"image_url": "/shop/city-loft.svg", "pet_layer": "background", "pet_style": "city"}),
     (11, "habitat", "background", "Moon Base", 320, {"image_url": "/shop/moon-base.svg", "pet_layer": "background", "pet_style": "moon"}),
 ]
+
+
+BACKUP_PATH = Path(__file__).resolve().parent / "data" / "lessons_backup.json"
+
+
+def load_lessons_backup() -> list[dict]:
+    with BACKUP_PATH.open("r", encoding="utf-8") as fh:
+        payload = json.load(fh)
+    if not isinstance(payload, list):
+        raise ValueError("lessons backup must be a list")
+    return payload
 
 
 def seed_if_needed(db):
@@ -94,18 +67,57 @@ def seed_if_needed(db):
                 )
             )
 
-    if db.query(Lesson).count() == 0:
-        for lesson in LESSONS:
-            db.add(
-                Lesson(
-                    id=lesson["id"],
-                    title=lesson["title"],
-                    body=lesson["body"],
-                    quiz_json=lesson["quiz_json"],
-                    reward_xp=40,
-                    reward_coins=50,
-                )
+    lessons_payload = load_lessons_backup()
+    existing_lessons = {lesson.id: lesson for lesson in db.query(Lesson).all()}
+
+    for lesson_payload in lessons_payload:
+        lesson_id = lesson_payload["id"]
+        if lesson_id in existing_lessons:
+            lesson = existing_lessons[lesson_id]
+            lesson.title = lesson_payload["title"]
+            lesson.body = lesson_payload["body"]
+            lesson.reward_xp = lesson_payload.get("reward_xp", 40)
+            lesson.reward_coins = lesson_payload.get("reward_coins", 50)
+            lesson.quiz_json = {"source": "lesson_questions"}
+        else:
+            lesson = Lesson(
+                id=lesson_id,
+                title=lesson_payload["title"],
+                body=lesson_payload["body"],
+                reward_xp=lesson_payload.get("reward_xp", 40),
+                reward_coins=lesson_payload.get("reward_coins", 50),
+                quiz_json={"source": "lesson_questions"},
             )
+            db.add(lesson)
+            db.flush()
+
+        existing_questions = {
+            row.question_key: row
+            for row in db.query(LessonQuestion).filter(LessonQuestion.lesson_id == lesson_id).all()
+        }
+        incoming_keys = set()
+        for question in lesson_payload.get("questions", []):
+            q_key = question["id"]
+            incoming_keys.add(q_key)
+            if q_key in existing_questions:
+                row = existing_questions[q_key]
+                row.question_text = question["question"]
+                row.options_json = question["options"]
+                row.answer = question["answer"]
+            else:
+                db.add(
+                    LessonQuestion(
+                        lesson_id=lesson_id,
+                        question_key=q_key,
+                        question_text=question["question"],
+                        options_json=question["options"],
+                        answer=question["answer"],
+                    )
+                )
+
+        for stale_key, stale_row in existing_questions.items():
+            if stale_key not in incoming_keys:
+                db.delete(stale_row)
 
     existing_items = {item.id: item for item in db.query(ShopItem).all()}
     for item_id, item_type, slot, name, cost, metadata in SHOP_ITEMS:
