@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 import hashlib
 import logging
 from time import time
@@ -11,6 +11,7 @@ from .models import Asset, Inventory, Pet, Position, RewardEvent, ShopItem, Wall
 
 # Hunger constant
 HUNGER_DECAY_PER_DAY = 10
+HUNGER_REWARD_PER_LESSON = 20
 
 LEVEL_THRESHOLDS = [0, 100, 250, 450, 700, 1000, 1400, 1850]
 STAGE_BY_LEVEL = {
@@ -205,14 +206,21 @@ def pet_equipped_items(db: Session, user_id: int) -> list[dict]:
         for _, item in rows
     ]
 
-def apply_hunger_decay(pet):
+def apply_hunger_decay(pet) -> bool:
     now = datetime.now(UTC).replace(tzinfo=None)
     last = pet.last_hunger_tick
+    days_passed = (now.date() - last.date()).days
+    if days_passed <= 0:
+        return False
 
-    days_passed = (now - last).days
+    pet.hunger = max(0, pet.hunger - (days_passed * HUNGER_DECAY_PER_DAY))
+    pet.last_hunger_tick = now
+    return True
 
-    if days_passed > 0:
-        pet.hunger = max(0, pet.hunger - days_passed * HUNGER_DECAY_PER_DAY)
-        pet.last_hunger_tick = now
 
-    return pet
+def reward_hunger_for_lesson(pet) -> bool:
+    now = datetime.now(UTC).replace(tzinfo=None)
+    before = pet.hunger
+    pet.hunger = min(100, pet.hunger + HUNGER_REWARD_PER_LESSON)
+    pet.last_hunger_tick = now
+    return pet.hunger != before

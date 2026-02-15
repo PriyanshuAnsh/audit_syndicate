@@ -10,7 +10,7 @@ from ..database import get_db
 from ..deps import current_user
 from ..models import Lesson, LessonProgress, LessonQuestion, Pet, User
 from ..schemas import LessonCheckRequest, LessonListOut, LessonOut, LessonSubmitRequest
-from ..services import HUNGER_DECAY_PER_DAY, grant_reward
+from ..services import apply_hunger_decay, grant_reward, reward_hunger_for_lesson
 
 
 router = APIRouter(prefix="/lessons", tags=["learning"])
@@ -158,20 +158,10 @@ def submit_lesson(
             "lesson_perfect",
             f"{lesson.id}:{payload.idempotency_key}",
         )
-        # ---- APPLY HUNGER DECAY FIRST ----
+
     pet = db.query(Pet).filter(Pet.user_id == user.id).one()
-
-    now = datetime.now(UTC)
-    days_passed = (now.date() - pet.last_hunger_tick.date()).days
-
-    if days_passed > 0:
-        decay = days_passed * HUNGER_DECAY_PER_DAY
-        pet.hunger = max(0, pet.hunger - decay)
-        pet.last_hunger_tick = now
-
-# ---- APPLY LESSON REWARD ----
-    pet.hunger = min(100, pet.hunger + HUNGER_REWARD_PER_LESSON)
-    pet.last_hunger_tick = now
+    apply_hunger_decay(pet)
+    reward_hunger_for_lesson(pet)
     db.commit()
     return {"completed": True, "score": score}
 
