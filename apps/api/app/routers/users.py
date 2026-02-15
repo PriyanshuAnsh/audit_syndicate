@@ -5,8 +5,8 @@ from ..database import get_db
 from ..deps import current_user
 from ..models import User, Wallet, Pet
 from ..schemas import MeOut, PetOut
+from ..services import apply_hunger_decay
 # from ..services import pet_equipped_items
-
 
 router = APIRouter(tags=["users"])
 
@@ -15,6 +15,10 @@ router = APIRouter(tags=["users"])
 def me(user: User = Depends(current_user), db: Session = Depends(get_db)):
     wallet = db.query(Wallet).filter(Wallet.user_id == user.id).one()
     pet = db.query(Pet).filter(Pet.user_id == user.id).one()
+    if apply_hunger_decay(pet):
+        db.commit()
+        db.refresh(pet)
+
     return {
         "email": user.email,
         "cash_balance": wallet.cash_balance,
@@ -27,7 +31,6 @@ def me(user: User = Depends(current_user), db: Session = Depends(get_db)):
             "xp_current": pet.xp_current,
             "stage": pet.stage,
             "hunger": pet.hunger,
-            # "equipped_items": pet_equipped_items(db, user.id),
             "equipped_items": [],
         },
     }
@@ -42,6 +45,7 @@ def get_pet(user: User = Depends(current_user), db: Session = Depends(get_db)):
         "level": pet.level,
         "xp_current": pet.xp_current,
         "stage": pet.stage,
+        "hunger": pet.hunger,
         # "equipped_items": pet_equipped_items(db, user.id),
         "equipped_items": [],
     }

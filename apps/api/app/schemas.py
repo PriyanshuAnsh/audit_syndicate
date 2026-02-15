@@ -113,6 +113,7 @@ class PetOut(BaseModel):
     level: int
     xp_current: int
     stage: str
+    hunger: int
     equipped_items: list[dict]
 
 

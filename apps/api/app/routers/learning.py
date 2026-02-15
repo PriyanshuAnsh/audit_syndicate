@@ -8,9 +8,9 @@ from sqlalchemy.orm import Session
 from ..config import settings
 from ..database import get_db
 from ..deps import current_user
-from ..models import Lesson, LessonProgress, LessonQuestion, User
+from ..models import Lesson, LessonProgress, LessonQuestion, Pet, User
 from ..schemas import LessonCheckRequest, LessonListOut, LessonOut, LessonSubmitRequest
-from ..services import grant_reward
+from ..services import apply_hunger_decay, grant_reward, reward_hunger_for_lesson
 
 
 router = APIRouter(prefix="/lessons", tags=["learning"])
@@ -158,6 +158,10 @@ def submit_lesson(
             "lesson_perfect",
             f"{lesson.id}:{payload.idempotency_key}",
         )
+
+    pet = db.query(Pet).filter(Pet.user_id == user.id).one()
+    apply_hunger_decay(pet)
+    reward_hunger_for_lesson(pet)
     db.commit()
     return {"completed": True, "score": score}
 
